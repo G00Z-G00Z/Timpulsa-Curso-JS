@@ -12,16 +12,17 @@ Necesitas hacer una carpeta con la siguiente estructura:
 
 ```
 videojuego
-|    index.html
-|    index.js
-└─── sprites
-|    |   sprite1.png
-|    |   sprite2.png
-|    |   ...
-└─── sounds
-|    |   sound1.mp3
-|    |   sound2.mp3
-|    |   ...
+|   index.html
+|   index.js
+└── assets
+└── sprites
+|   |   sprite1.png
+|   |   sprite2.png
+|   |   ...
+└── sounds
+|   |   sound1.mp3
+|   |   sound2.mp3
+|   |   ...
 ...
 
 
@@ -50,8 +51,6 @@ En el `index.html`
 ```
 
 ---
-
-
 
 ### Para Replit
 
