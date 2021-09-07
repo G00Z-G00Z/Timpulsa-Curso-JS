@@ -2,7 +2,7 @@
 
 Para enseñar el desarrollo de videojuegos en Js, usaremos la librería de **kaboom js**. Esta es una librería para principiantes para hacer videojuegos en js. Es ligera y sencilla.
 
-Para más información, [documentación de Kaboom js](https://kaboomjs.com/https://)
+Para más información, [documentación de Kaboom js](https://kaboomjs.com)
 Para ver el temario del curso [Temario del curso](Temario.md)
 
 ## **¿Cómo desarrollar?**
