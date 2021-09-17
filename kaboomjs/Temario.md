@@ -60,6 +60,7 @@ Comoquiera toda la información necesaria está en la [documentación de Kaboom 
 - color : color rgb
 - text : texto
 - rect : rectangulo
+- origin : le pone un origen al objeto (por ejemplo, si quieres empezar a contar desde el centro, o desde la esquina etc)
 - area : Le agrega un area rectangular a un objeto, para que pueda detectar colosiones
 - solid : Hace que el objeto, no se pueda atravesar, si el objeto tiene area y se le pone un pushallout. Ejemplo: 
     ```javascript
