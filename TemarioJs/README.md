@@ -1,5 +1,5 @@
 # ¿Como añadir un Tema?
----
+
 Para añadir un tema, puedes subir un archivo .md (con la intención de que podemos hacer hiperlinks entre los .md), con la explicación del tema. No tiene que ser nada complicado, ya que después se actualizarán a presentaciones pptx. Solamente es un temario básico para darnos una idea de como trabajar. 
 
 El índice de los temas están [aquí](indice.md).
@@ -10,7 +10,7 @@ Cuando agregres un archivo .md, porfavor actualiza el .md.
 
 
 ## ¿Qué deben de incluir los temas? 
----
+
 Los temas deben de presentar: 
 - Una explicación **Breve** pero *consisa* del tema. 
 - Debe incluir ejemplos de la vida real y de práctica
