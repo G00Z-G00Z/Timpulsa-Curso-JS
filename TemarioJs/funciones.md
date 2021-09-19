@@ -1,3 +1,5 @@
+[Ir al índice](indice.md)
+
 # Funciones
 
 - [Introducción](#introducción)
@@ -156,4 +158,4 @@ const saludarPersona = (nombre) => {
 
 - https://www.w3schools.com/js/js_functions.asp#:~:text=A%20JavaScript%20function%20is%20a,invokes%20it%20(calls%20it).
 
-[Ir al índice](indice.md)
+[Go to the top](#funciones)
