@@ -8,7 +8,7 @@
 6. [Operadores](operadores.md)
 7. [Funciones](funciones.md)
 8. Condicionales
-9. [Alertas y prompts](alertas_y_prompts.md)
+9. [Inputs del usuario](inputs_del_usuario.md)
 10. Ciclos
 11. Arreglos
 12. [Strings](strings.md)
