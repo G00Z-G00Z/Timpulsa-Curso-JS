@@ -129,30 +129,87 @@ const saludarPersona = (nombre) => {
 };
 ```
 
-## Ejercicios
+## Ejercicios y solución
 
-- Función que sume los números del 1 a n
-  - Ejemplo : sumarN(3) = 1 + 2 + 3 = 6
-- Función que te diga si eres mayor de edad
-  - Ejemplo : esMayorDeEdad(12) = false
-- Función que imprima un cuadrado formado por el caractér que le pases
-  - Ejemplo
-  ```javascript
-  imprimirCuadrado("+");
-  /* Resultado
-  ++++
-  +  +
-  +  +
-  ++++
-  */
-  imprimirCuadrado("#");
-  /* Resultado
-  ####
-  #  #
-  #  #
-  ####
-  */
-  ```
+> Función que sume los números del 1 hasta un número `n`
+
+**Solución**
+
+```javascript
+// Solución con iteraciones
+function sumarN(n) {
+	let total = 0;
+
+	for (let i = 1; i < n + 1; i++) total += i;
+
+	return total;
+}
+
+// Solución matemática
+function sumarN(n) {
+	return (n * (n + 1)) / 2;
+}
+```
+
+---
+
+> Función que te diga si eres mayor de edad
+
+```javascript
+function esMayorDeEdad(edad) {
+	return edad >= 18;
+}
+```
+
+---
+
+> Función que imprima un cuadrado formado por el caractér que le pases, y de tamaño n x n
+
+- Ejemplo
+
+```javascript
+imprimirCuadrado("+", 4);
+/* Resultado
+++++
++  +
++  +
+++++
+*/
+imprimirCuadrado("#", 3);
+/* Resultado
+###
+# #
+###
+*/
+```
+
+**Solución**
+
+```javascript
+const imprimirCuadrado = (char, n) => {
+	let lineaCompleta = "";
+
+	for (let i = 0; i < n; i++) lineaCompleta += char;
+
+	let lineaEspaciada = "";
+
+	for (let i = 0; i < n; i++)
+		if (i === 0 || i + 1 === n) lineaEspaciada += char;
+		else lineaEspaciada += " ";
+
+	let resultado = "";
+
+	resultado += lineaCompleta + "\n";
+
+	for (let i = 1; i < n - 1; i++) {
+		resultado += lineaEspaciada + "\n";
+	}
+
+	resultado += lineaCompleta;
+
+	return resultado;
+};
+```
 
 ## Referencias
 
