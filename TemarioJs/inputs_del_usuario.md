@@ -51,6 +51,22 @@ console.log(`Hey there ${name}`);
 
 > Has un programa en el usuario ponga su peso y su estatura y calcule su bmi
 
+```javascript
+const prompt = require("prompt-sync")();
+
+const peso = getNumber("Dame tu peso en kg: ");
+const estatura = getNumber("Dame tu estatura en cm: ");
+
+const bmi = peso / (estatura / 100) ** 2;
+
+console.log(`Tu bmi es ${bmi}`);
+
+function getNumber(message) {
+	const n = prompt(message);
+	return Number(n);
+}
+```
+
 # Referencias
 
 - https://www.codecademy.com/articles/getting-user-input-in-node-js
