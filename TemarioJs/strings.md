@@ -119,6 +119,8 @@ function cualProfesion(lista) {
 }
 ```
 
+[Go to the top](#strings)
+
 # Referencia
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
