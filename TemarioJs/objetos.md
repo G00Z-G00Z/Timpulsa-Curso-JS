@@ -1,18 +1,12 @@
 [Ir al índice](indice.md)
 
-# Cosas que faltan
-
-- Pasar por referencia
-- Ejemplos
-- Acceso
-
 # Objetos
 
-Los objetos son un tipo primitivo en javascript. Sirve para guardar variables en un _hash map_ o en otras palabras, en _key-value_ pair. Es como un arreglo, pero en vez de ínices numéricos, pueden ser palabras.
+Los objetos son un tipo primitivo en javascript. Sirve para guardar variables en un _hash map_ o en otras palabras, en _key-value_ pair. Es como un arreglo, pero en vez de índices numéricos, pueden ser palabras.
 
 Los objetos sirven mucho para guardar información de manera un poco más ordenada, y para acceder información sobre algo de manera rápida.
 
-Al igual que un arreglo, tu puedes guardar lo que sea en el objeto.
+Al igual que un arreglo, tu puedes guardar lo que sea en el objeto (inlcuso otros objetos!!).
 
 ## Ejemplo
 
@@ -111,6 +105,16 @@ const persona = {
 persona.decirEdad(); // Hola, soy Marcelo y tengo 12 años
 persona.crecer();
 persona.decirEdad(); // Hola, soy Marcelo y tengo 13 años
+```
+
+# For in
+
+Los objetos, son interables, pero a diferencia de los arreglos, se tiene que usar un ciclo _for in_ como se muestra:
+
+```javascript
+for (const key in object) {
+	const value = object[key];
+}
 ```
 
 # Fábricas de objetos
@@ -229,6 +233,7 @@ console.log(miPersona);
 _Has un programa donde guardes la información de 2 personas, y luego la despliegues en pantalla_
 
 ```javascript
+const prompt = require("prompt-sync")();
 // Ejemplo sin objeto
 const nombre1 = prompt("Dame tu nombre");
 const edad1 = prompt("Dame tu edad");
@@ -242,6 +247,7 @@ console.log(`Tu nombre es ${nombre2} y tu edad es ${edad2}`);
 ```
 
 ```javascript
+const prompt = require("prompt-sync")();
 // Ejemplo con objeto
 const persona1.nombre = prompt("Dame tu nombre");
 const persona1.edad = prompt("Dame tu edad");
@@ -284,6 +290,53 @@ function getDatosPersona() {
 for (let i = 0; i < 2; i++) {
 	const persona = getDatosPersona();
 	console.log(`Tu nombre es ${persona.nombre} y tu edad es ${persona.edad}`);
+}
+```
+
+---
+
+> Hacer un programa que cuente cuantas letras hay de cada tipo, en un string
+
+_Ejemplo_
+
+```javascript
+const frase = "Hola como estas?";
+
+console.log(countCharacters(frase));
+/*
+{
+  H: 1,
+  o: 3,
+  l: 1,
+  a: 2,
+  ' ': 2,
+  c: 1,
+  m: 1,
+  e: 1,
+  s: 2,
+  t: 1,
+  '?': 1
+}
+*/
+```
+
+**Solución**
+
+```javascript
+function countCharacters(frase) {
+	/**
+	 * Donde las llaves son el tipo de letras, y el valor es cuantas veces aparecio
+	 */
+	const listaLetras = {};
+
+	for (let i = 0; i < frase.length; i++) {
+		const letra = frase[i];
+
+		if (listaLetras[letra]) listaLetras[letra]++;
+		else listaLetras[letra] = 1;
+	}
+
+	return listaLetras;
 }
 ```
 
