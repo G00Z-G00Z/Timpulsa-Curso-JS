@@ -183,6 +183,47 @@ const persona3 = fabricaPersonas("Sam",12)
 
 ```
 
+## Pasar objetos por referencia
+
+Los objetos pueden ser parámetros de una función. Sin embargo, los objetos que se pasan a como parámetros, se pasan _por referencia_.
+
+Esto significa, que puedes cambiar el objeto dentro de la función.
+
+```javascript
+const miPersona = {
+	nombre: "Eduardo",
+	edad: 21,
+};
+
+function cambiarNombre(persona, nombreNuevo) {
+	persona.nombre = nombreNuevo;
+}
+
+function agregarMascotaPerro(persona, nombreMascota) {
+	persona.mascota = {
+		nombre: nombreMascota,
+		tipo: "Perro",
+	};
+}
+
+cambiarNombre(miPersona, "Javier");
+
+agregarMascotaPerro(miPersona, "Lea");
+
+console.log(miPersona);
+/*
+	{
+		nombre: "Javier", 
+		edad : 21, 
+		mascota: {
+			nombre: "Lea", 
+			tipo : "Perro"
+		}
+	}
+
+*/
+```
+
 ## Ejemplo
 
 _Has un programa donde guardes la información de 2 personas, y luego la despliegues en pantalla_
