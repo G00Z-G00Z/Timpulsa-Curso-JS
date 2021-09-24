@@ -2,7 +2,7 @@
 
 1. Que es un lenguaje de programación
 2. [Que es Javascript](que_es_js.md)
-3. Ambiente de desarrollo (Replit y Consola del navegador)
+3. Ambiente de desarrollo (Replit)
 4. Primitivos y Variables
 5. [Comentarios](comentarios.md)
 6. [Operadores](operadores.md)
