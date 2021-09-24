@@ -2,11 +2,6 @@
 
 # Funciones
 
-- [Introducción](#introducción)
-- [Sintaxis](#declaración-de-una-función)
-- [Ejemplos](#ejemplos-de-funciones)
-- [Ejercicios](#ejercicios)
-
 ## Introducción
 
 > Una función, es un bloque de código que hace algo.

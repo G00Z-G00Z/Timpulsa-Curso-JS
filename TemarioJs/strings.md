@@ -16,8 +16,6 @@ Como ya se ha visto, los strings son arreglos de caracteres. Ya que son muy comu
 | repeat(_int_)                     | repite el string un número de veces                                                                                                                               |
 | substring(_separation_, \[_end_]) | extrae una parte del string, empezando desde el índice de _separación_ y opcionalmente, termina en el índice de _end_ (si no hay indice de _end_, se va al final) |
 | repeat(_int_)                     | repite el string un número de veces                                                                                                                               |
-| repeat(_int_)                     | repite el string un número de veces                                                                                                                               |
-| repeat(_int_)                     | repite el string un número de veces                                                                                                                               |
 | split(_str_)                      | parte el string donde encuentre _str_, y lo convierte en un arreglo                                                                                               |
 
 > Adicionalmente, hay un método para **los arreglos** para generar un string: _arr_.join(_str_) junta un arreglo con un separador _str_ y devuelve un string.

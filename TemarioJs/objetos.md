@@ -228,7 +228,7 @@ console.log(miPersona);
 */
 ```
 
-## Ejemplo
+## Ejercicios
 
 _Has un programa donde guardes la información de 2 personas, y luego la despliegues en pantalla_
 

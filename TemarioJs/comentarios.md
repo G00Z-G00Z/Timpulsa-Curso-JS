@@ -2,7 +2,7 @@
 
 # Comentarios
 
-Los comentarios sirve para poder dejar información adicional en el código. Solamente es _texto_, no se compila y no afecta al rendimiento del programa. Es solamente para dejar una guía al programador.
+Los comentarios sirve para poder dejar información adicional en el código. Solamente es _texto_, no se interpreta y no afecta al rendimiento del programa. Es solamente para dejar una guía al programador.
 
 Por ejemplo:
 
