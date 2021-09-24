@@ -2,7 +2,7 @@
 
 # Objetos
 
-Los objetos son un tipo primitivo en javascript. Sirve para guardar variables en un _hash map_ o en otras palabras, en _key-value_ pair. Es como un arreglo, pero en vez de índices numéricos, pueden ser palabras.
+Los objetos son un tipo primitivo en `Javascript`. Sirve para guardar variables en un _hash map_ o en otras palabras, en _key-value_ pair. Es como un arreglo, pero en vez de índices numéricos, pueden ser palabras.
 
 Los objetos sirven mucho para guardar información de manera un poco más ordenada, y para acceder información sobre algo de manera rápida.
 

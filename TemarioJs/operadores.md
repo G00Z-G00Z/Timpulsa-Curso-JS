@@ -116,7 +116,7 @@ _Ejemplo_
 // Respuesta = 17
 ```
 
-Javascript sigue un orden de operaciones **PEMDAS**
+`Javascript` sigue un orden de operaciones **PEMDAS**
 
 1. **P** : Parentesis
 2. **E** : Exponentes
