@@ -52,6 +52,7 @@ Comoquiera toda la información necesaria está en la [documentación de Kaboom 
 - get(tag : string) : regresa un arreglo de elementos con el mismo tag
 - every(tag : string, callback(obj)) : por cada objeto con el tag, hace algo   
 - tags : son string que le da un identificador a un objeto
+- anims: son para animaciones del jugador (tipo para hacer los sprites que se vean que caminan)
 
 ## Components
 - pos : posicion x, y
