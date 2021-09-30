@@ -4,7 +4,7 @@ Created: September 29, 2021 8:10 PM
 
 # Link al videojuego
 
-[]()
+[Link al videojuego](https://replit.com/@EduardoGmez1/Choose-your-own-adventure#README.md)
 
 ---
 
