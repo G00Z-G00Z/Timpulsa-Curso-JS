@@ -1,4 +1,4 @@
-import { fabricaEscena, fabricaOpcion } from './interfaces';
+import { fabricaEscena, fabricaOpcion, fabricaEnding } from './interfaces';
 import { Opcion } from './interfaces';
 
 /**
@@ -10,9 +10,23 @@ import { Opcion } from './interfaces';
 export const newEscena: fabricaEscena = (mensaje: string, listaOpciones: Opcion[]) => {
     return {
         mensaje,
-        listaOpciones
+        listaOpciones,
+        esFinal: false
     }
 
+}
+
+/**
+ * Regresa un final, que debe ser tratado de manera diferente al resto
+ * @param mensaje Mensaje final
+ * @returns Escena
+ */
+export const newEnding: fabricaEnding = (mensaje: string) => {
+    return {
+        mensaje,
+        listaOpciones: [],
+        esFinal: true
+    }
 }
 
 /**
