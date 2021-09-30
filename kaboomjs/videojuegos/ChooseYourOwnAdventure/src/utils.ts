@@ -1,5 +1,5 @@
 import { fabricaEscena, fabricaOpcion } from './interfaces';
-import { Opcion } from '../dist/interfaces';
+import { Opcion } from './interfaces';
 
 /**
  * Con esto se puede crear una escena de manera rapida
