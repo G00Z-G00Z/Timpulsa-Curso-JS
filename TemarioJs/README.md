@@ -16,5 +16,5 @@ Los temas deben de presentar:
 - Debe incluir ejemplos de la vida real y de práctica
 - Recursos adicionales o documentación de donde pueden encontrar información
 - Referencias de donde se obtuvo la información
-- *Opcional* Links de imagenes para las .pptx.
+- *Opcional* Links de imagenes que se puedan usar
 
