@@ -79,7 +79,7 @@ export type fabricaOpcion = (texto: string, siguienteEscenaId: string) => Opcion
 
 # Comentarios generales
 
-Para poder generar el código a javascript, simplemente usa el compilador de `typescript`. Luego se genera una carpeta `dist/` con los archivos en formato de `nodejs`
+Para poder generar el código a javascript, simplemente usa el compilador de `typescript`. Luego se genera una carpeta `dist/` con los archivos en formato de `nodejs`. Comoquiera, el compilador está configurado para que también acepte `javascript`, entoncecs se puede escribir código de javascript sin problema. 
 
 ---
 
