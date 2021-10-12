@@ -22,10 +22,6 @@ const addBackground = (layerId: string) => {
 }
 
 
-
-
-
-
 const textConfig: TextCompConf = {
     size: width() * .04,
     width: width() * .9,
@@ -44,22 +40,30 @@ scene("escena", (escena: Escena) => {
 
 
     addBackground("background")
-    if (escena.esFinal)
-        go("endScreen", escena)
 
     getPromptScreenWithConfiguration(escena, textConfig)
+    action(() => {
+        cursor("default")
+        escena.esFinal && go("endScreen", escena)
+    })
 
-    action(() => cursor("default"))
+
+
 
 
 })
 
+
+
 scene("endScreen", (escena: Escena) => {
+
+    addBackground("background")
+
     add([
-        text(escena.mensaje)
+        text(escena.mensaje, textConfig)
     ])
 
-    addButton("Regresar ??", vec2(10, 10), () => {
+    addButton("Regresar al inicio?", vec2(width() / 2, height() / 2), () => {
         go("escena", miHistoria[1])
     })
 
