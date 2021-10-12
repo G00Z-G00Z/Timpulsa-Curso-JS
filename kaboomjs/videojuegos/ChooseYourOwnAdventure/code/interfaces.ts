@@ -4,7 +4,8 @@ Opcion dentro de una escena
 */
 export interface Opcion {
     texto: string,
-    siguienteEscenaId: string
+    siguienteEscenaId: string,
+    escenaAnteriorId?: string,
 }
 
 /*
@@ -25,7 +26,7 @@ export interface Historia {
 /**
  * Funcion que fabrica escenas
  */
-export type fabricaEscena = (mensaje: string, listaOpciones: Opcion[]) => Escena
+export type fabricaEscena = (escenaId: string, mensaje: string, listaOpciones: Opcion[]) => Escena
 
 /**
  * Funcion que fabrica escenas

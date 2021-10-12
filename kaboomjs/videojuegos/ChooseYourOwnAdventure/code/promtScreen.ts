@@ -53,9 +53,10 @@ export const getPromptScreenWithConfiguration = (escena: Escena, textConfigurati
         const letra = optionLetters[i]
         const tag = `Option_${letra}`
         const nextScene = escena.listaOpciones[i].siguienteEscenaId
+        const prevScene = escena.listaOpciones[i].escenaAnteriorId
 
         clicks(tag, () => {
-            go("escena", miHistoria[nextScene])
+            go("escena", miHistoria[nextScene], prevScene)
         })
 
         hovers(tag, (btn) => {

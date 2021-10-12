@@ -7,7 +7,12 @@ import { Opcion } from './interfaces';
  * @param listaOpciones Opcion[]
  * @returns Escena
  */
-export const newEscena: fabricaEscena = (mensaje: string, listaOpciones: Opcion[]) => {
+export const newEscena: fabricaEscena = (escenaId: string, mensaje: string, listaOpciones: Opcion[]) => {
+
+    listaOpciones.forEach((opcion, i) => {
+        listaOpciones[i].escenaAnteriorId = escenaId
+    });
+
     return {
         mensaje,
         listaOpciones,
