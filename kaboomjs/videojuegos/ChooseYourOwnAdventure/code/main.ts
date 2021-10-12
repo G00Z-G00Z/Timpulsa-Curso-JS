@@ -42,12 +42,12 @@ scene("escena", (escena: Escena) => {
 
 
     addBackground("background")
-    const [layout, layoutConfig] = getPromptScreenWithConfiguration(escena, textConfig)
-
-    addLevel(layout, layoutConfig)
-
     if (escena.esFinal)
         go("endScreen", escena)
+    getPromptScreenWithConfiguration(escena, textConfig)
+
+
+
 
 
     // add([

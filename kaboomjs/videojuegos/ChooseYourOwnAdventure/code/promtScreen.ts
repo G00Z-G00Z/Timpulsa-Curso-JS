@@ -1,12 +1,13 @@
 import { Escena } from "./interfaces";
-import { LevelConf, TextCompConf, Origin } from 'kaboom';
+import { LevelConf, TextCompConf, Origin, Character, AreaComp, Vec2 } from 'kaboom';
+import { miHistoria } from "./miHistoria";
 
 
 
 declare function origin(pos: Origin): void
 
 
-export const getPromptScreenWithConfiguration = (escena: Escena, textConfiguration: TextCompConf): [string[], LevelConf] => {
+export const getPromptScreenWithConfiguration = (escena: Escena, textConfiguration: TextCompConf): void => {
 
     const optionLetters = ["A", "B", "C", "D"]
 
@@ -30,20 +31,41 @@ export const getPromptScreenWithConfiguration = (escena: Escena, textConfigurati
     }
 
     for (let i = 0; i < escena.listaOpciones.length; i++) {
+
         const letra = optionLetters[i]
         const texto = escena.listaOpciones[i].texto
 
-        layOutConfig[letra] = () => [
-            text(texto, textConfiguration),
-            origin("center")
+        layOutConfig[letra] = () =>
+            [
+                text(texto, textConfiguration),
+                area({ cursor: "pointer" }),
+                origin("center"),
+                `Option_${letra}`,
+            ]
 
-        ]
+    }
+
+    addLevel(layout, layOutConfig)
+
+
+    for (let i = 0; i < escena.listaOpciones.length; i++) {
+
+        const letra = optionLetters[i]
+        const tag = `Option_${letra}`
+        const nextScene = escena.listaOpciones[i].siguienteEscenaId
+
+        clicks(tag, () => {
+            go("escena", miHistoria[nextScene])
+        })
+
+        hovers(tag, (btn) => {
+            btn.scale = vec2(1.2)
+        })
+
 
     }
 
 
-
-    return [layout, layOutConfig]
 
 }
 
