@@ -59,31 +59,50 @@ console.log(arr[arr.length - 1]) // escribe en consola 'este es el último eleme
 
 ## Ejercicios y solución
 
-> 
+ Crea un arreglo que contenga 3 números, despues imprime el segundo elemento.
 
 **Solución**
 
 ```javascript
+let arreglo = [0, 5, 2];
 
+console.log(arreglo[1]); // 5
 ```
 
 ---
 
-> 
+ Agrega dos nuevos valores al arreglo del ejercicio anterior, despés imprímelo
 
 **Solución**
 
 ```javascript
-
+let arreglo = [0, 5, 2];
+arreglo.push(9);
+arreglo.push(15);
+console.log(arreglo[3]); // 9
+console.log(arreglo[4]); //15
 ```
 ---
-> 
+Utilizando el código del problema anterior, elimina el ultimo valor del arreglo, despues haz un recorrido e imprime los valores restantes del arreglo.
 
 **Solución**
 
 ```javascript
+let arreglo = [0, 5, 2];
+arreglo.push(9);
+arreglo.push(15);
 
-
+arreglo.pop();
+for(let i = 0; i<arreglo.length; i++){
+    console.log(arreglo[i]);
+}
+/*
+    Resultado:
+    0
+    5
+    2
+    9
+*/
 ```
 
 ## Referencias

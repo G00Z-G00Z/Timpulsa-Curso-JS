@@ -45,7 +45,7 @@ if(calif>=70 && materia=="matematicas")
 # OR
 ```javascript 
 //Materia puede ser matemáticas o español
-if(materia=="español" && materia=="matematicas")
+if(materia=="español" || materia=="matematicas")
     console.log("Es un curso básico")
 
 ```

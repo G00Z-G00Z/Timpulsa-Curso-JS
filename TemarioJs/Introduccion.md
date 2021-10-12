@@ -1,34 +1,26 @@
 [Ir al índice](indice.md)
 
-# Que es un lenguaje de programación
+## ¿Qué es un lenguaje de programación?
 
-## Introducción
+A grandes rasgos un lenguaje de programación es una serie de símbolos, reglas de sintaxis y semántica, que se utilizan para escribir una serie de instrucciones.
 
- Replit es una plataforma que permite escribir código y hostear aplicaciones, también tiene recursos educativos, lo que la hace ideal para profesores y alumnos.
- Para accesar a replit debes crear una cuenta en este [enlace]( https://replit.com/signup).
-  
-Despues presiona el boton de "New repl".
- ![Opciones del menú](https://docs.replit.com/images/tutorials/01-introduction/01-01-new-repl.png)
- El apartado marcado con el número 2 puedes seleccionar el lenguaje de programación, para este curso estaremos utilizando tanto node (javascript), como kaboomjs despues ponle un nombre y presiona crear repl.
- 
- Dentro del repl, se debe observar algo parecido a esto.
- ![Interfaz de replit](https://cms.replit.com/assets/kaboom/editor.png)
- A la izquierda se pueden observar los archivos.
- A la derecha se encuentra la consola.
-## Ejercicios y solución
+ ### Ejemplos
+ - Javascript, el cual utilizaremos en este curso
+ - C++
+ - Java
+ - Python
+ - C#
+## ¿Como funciona un navegador?
 
- Crea un proyecto en replit de node.js e imprime un "hello world!" en la consola
+ Cuando cargas una página web en tu navegador, estás ejecutando tu código (HTML, CSS y JavaScript) dentro de un entorno de ejecución (la pestaña del navegador). Esto es como una fábrica que toma materias primas (el código) y genera un producto (la página web).
 
-**Solución**
-
-console.log("Hello world!")
----
+ ![Funcionamiento de una página web](https://media.prod.mdn.mozit.cloud/attachments/2016/07/12/13504/2dbaab3219cbbb28abb27da40ada2dee/execution.png)
 
 
 ## Referencias
 
-- https://replit.com/~
-- https://docs.replit.com/tutorials/01-introduction-to-the-repl-it-ide
-- https://docs.replit.com/archive/quick-start
+- https://programas.cuaed.unam.mx/repositorio/moodle/pluginfile.php/1023/mod_resource/content/1/contenido/index.html
+- https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/What_is_JavaScript
+- 
 
-[Go to the top](##Introducción)
+[Go to the top](#Introducción)
