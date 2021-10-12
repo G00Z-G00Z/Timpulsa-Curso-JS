@@ -2,6 +2,8 @@ import kaboom, { KaboomConf, Level, LevelConf, Origin, TextCompConf } from "kabo
 import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
 import { getPromptScreenWithConfiguration } from "./promtScreen";
+import { addClickableText } from './ClickableText';
+import { Vec2 } from 'kaboom';
 
 
 kaboom();
@@ -44,18 +46,10 @@ scene("escena", (escena: Escena) => {
     addBackground("background")
     if (escena.esFinal)
         go("endScreen", escena)
+
     getPromptScreenWithConfiguration(escena, textConfig)
 
-
-
-
-
-    // add([
-    //     text(escena.mensaje, textConfig),
-    //     pos(vec2(width() * .1, 0)),
-
-    // ])
-
+    action(() => cursor("default"))
 
 
 })
@@ -64,6 +58,40 @@ scene("endScreen", (escena: Escena) => {
     add([
         text(escena.mensaje)
     ])
+
+    addButton("Regresar ??", vec2(10, 10), () => {
+        go("escena", miHistoria[1])
+    })
+
 })
 
 go("escena", miHistoria[1])
+
+function addButton(txt: string, p: Vec2, f: () => void) {
+
+    const btn = add([
+        rect(10, 10),
+        text(txt, textConfig),
+        color(255, 255, 0),
+        pos(p),
+        area({ cursor: "pointer", }),
+        scale(1),
+        origin("center"),
+    ]);
+
+    btn.clicks(f);
+
+    btn.hovers(() => {
+        const t = time() * 10;
+        btn.color = rgb(
+            wave(0, 255, t),
+            wave(0, 255, t + 2),
+            wave(0, 255, t + 4),
+        );
+        btn.scale = vec2(1.2);
+    }, () => {
+        btn.scale = vec2(1);
+
+    });
+
+}
