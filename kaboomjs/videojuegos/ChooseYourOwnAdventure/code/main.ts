@@ -1,8 +1,7 @@
-import kaboom, { KaboomConf, Level, LevelConf, Origin, TextCompConf } from "kaboom";
+import kaboom, { Origin, TextCompConf } from "kaboom";
 import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
 import { getPromptScreenWithConfiguration } from "./promtScreen";
-import { addClickableText } from './ClickableText';
 import { Vec2 } from 'kaboom';
 
 
@@ -64,16 +63,16 @@ scene("endScreen", (escena: Escena, escenaAnterior: string) => {
     ])
 
     addButton("Regresar al inicio?", vec2(width() / 2, height() / 2), () => {
-        go("escena", miHistoria[1], "1")
+        go("escena", miHistoria.getScene("1"), "1")
     })
     addButton("Regresar escena anterior", vec2(width() / 2, 3 * height() / 4), () => {
-        go("escena", miHistoria[escenaAnterior], "1")
+        go("escena", miHistoria.getScene(escenaAnterior), "1")
     })
 
 
 })
 
-go("escena", miHistoria[1])
+go("escena", miHistoria.getScene("1"))
 
 function addButton(txt: string, p: Vec2, f: () => void) {
 

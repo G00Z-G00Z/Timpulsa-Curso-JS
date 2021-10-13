@@ -18,10 +18,14 @@ export interface Escena {
 }
 
 /*
-Donde la llave, es el id de la escena
+Este es un objeto que guarda las escenas 
 */
 export interface Historia {
-    [key: string]: Escena
+    listaEscenas: {
+        [key: string]: Escena
+    },
+    addScene(id: string | number, escena: Escena): void,
+    getScene(id: string | number): Escena | undefined
 }
 /**
  * Funcion que fabrica escenas
@@ -37,3 +41,9 @@ export type fabricaEnding = (mensaje: string) => Escena
  * Funcion que fabrica opciones
  */
 export type fabricaOpcion = (texto: string, siguienteEscenaId: string) => Opcion
+
+
+/**
+ * Es un objeto que devuelve un objeto de historia
+ */
+export type fabricaHistoria = () => Historia

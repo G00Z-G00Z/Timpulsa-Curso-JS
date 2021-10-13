@@ -1,4 +1,4 @@
-import { fabricaEscena, fabricaOpcion, fabricaEnding } from './interfaces';
+import { fabricaEscena, fabricaOpcion, fabricaEnding, fabricaHistoria, Escena } from './interfaces';
 import { Opcion } from './interfaces';
 
 /**
@@ -44,5 +44,21 @@ export const newOpcion: fabricaOpcion = (texto: string, siguienteEscenaId: strin
     return {
         texto,
         siguienteEscenaId
+    }
+}
+
+/**
+ * Regresa una historia vacía
+ * @returns Historia
+ */
+export const newHistoria: fabricaHistoria = () => {
+    return {
+        listaEscenas: {},
+        addScene(id: string | number, escena: Escena) {
+            this.listaEscenas[id] = escena
+        },
+        getScene(id: string | number) {
+            return this.listaEscenas[id]
+        }
     }
 }
