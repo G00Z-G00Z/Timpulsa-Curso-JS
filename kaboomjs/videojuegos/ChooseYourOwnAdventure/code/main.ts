@@ -52,7 +52,8 @@ scene("escena", (escena: Escena, previousScene: string) => {
         })
 
     } else {
-        setUpScene(escena, textConfig)
+        const { layOutConfig, layout } = setUpScene(escena, textConfig)
+        addLevel(layout, layOutConfig)
     }
 
 })

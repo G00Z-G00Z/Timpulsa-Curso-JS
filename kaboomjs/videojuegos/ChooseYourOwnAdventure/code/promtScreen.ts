@@ -8,7 +8,10 @@ declare function origin(pos: Origin): void
 
 
 export const setUpScene = (escena: Escena,
-    textConfiguration: TextCompConf): void => {
+    textConfiguration: TextCompConf): {
+        layout: string[],
+        layOutConfig: LevelConf
+    } => {
 
     // Opciones disponibles para elegir un camino
     const optionLetters = ["A", "B", "C", "D"]
@@ -41,7 +44,9 @@ export const setUpScene = (escena: Escena,
     for (let i = 0; i < escena.listaOpciones.length; i++) {
 
         const letra = optionLetters[i]
-        const texto = escena.listaOpciones[i].texto
+
+        const { texto, siguienteEscenaId, escenaAnteriorId } = escena.listaOpciones[i]
+
 
         layOutConfig[letra] = () =>
             [
@@ -51,33 +56,18 @@ export const setUpScene = (escena: Escena,
                 letra, // Esto es el tag de la opcion
             ]
 
-    }
-
-    // Agregar el nivel
-    addLevel(layout, layOutConfig)
-
-
-    // Agregar opciones para las letras
-    for (let i = 0; i < escena.listaOpciones.length; i++) {
-
-        const letra = optionLetters[i]
-        const tag = letra
-        const nextScene = escena.listaOpciones[i].siguienteEscenaId
-        const prevScene = escena.listaOpciones[i].escenaAnteriorId
-
-        clicks(tag, () => {
-            go("escena", miHistoria.getScene(nextScene), prevScene)
+        clicks(letra, () => {
+            go("escena", miHistoria.getScene(siguienteEscenaId), escenaAnteriorId)
         })
 
-        hovers(tag, (btn) => {
+        hovers(letra, (btn) => {
             btn.scale = vec2(1.2)
         })
 
-
     }
 
 
-
+    return { layout, layOutConfig }
 }
 
 
