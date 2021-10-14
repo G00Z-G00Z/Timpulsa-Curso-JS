@@ -54,10 +54,12 @@ export const newOpcion: fabricaOpcion = (texto: string, siguienteEscenaId: strin
 export const newHistoria: fabricaHistoria = () => {
     return {
         listaEscenas: {},
+        currentScene: "",
         addScene(id: string | number, escena: Escena) {
             this.listaEscenas[id] = escena
         },
         getScene(id: string | number) {
+            this.currentScene = String(id)
             return this.listaEscenas[id]
         }
     }

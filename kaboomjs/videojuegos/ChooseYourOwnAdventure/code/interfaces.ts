@@ -24,6 +24,7 @@ export interface Historia {
     listaEscenas: {
         [key: string]: Escena
     },
+    currentScene: string,
     addScene(id: string | number, escena: Escena): void,
     getScene(id: string | number): Escena | undefined
 }
