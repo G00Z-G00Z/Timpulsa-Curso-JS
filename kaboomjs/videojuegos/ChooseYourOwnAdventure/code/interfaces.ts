@@ -43,7 +43,6 @@ export type fabricaEnding = (escenaId: string, mensaje: string) => Escena
  */
 export type fabricaOpcion = (texto: string, siguienteEscenaId: string) => Opcion
 
-
 /**
  * Es un objeto que devuelve un objeto de historia
  */
