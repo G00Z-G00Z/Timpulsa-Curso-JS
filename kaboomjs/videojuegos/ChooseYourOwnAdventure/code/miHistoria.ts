@@ -20,7 +20,7 @@ miHistoria.addScene(
 )
 
 miHistoria.addScene(
-    newEscena("19", "Tu avanzas por la puerta, hacia un bosque mucho más profundo de lo que habías imaginado. Sigues caminando y la noche se va haciendo más oscura. Te sientas debajo de un arból y te empieza a dar sueño. ¿Cierras los ojos? ",
+    newEscena("37", "Tu avanzas por la puerta, hacia un bosque mucho más profundo de lo que habías imaginado. Sigues caminando y la noche se va haciendo más oscura. Te sientas debajo de un arból y te empieza a dar sueño. ¿Cierras los ojos? ",
         [
             newOpcion("Dormir", "3"),
             newOpcion("Quedarme despierto", "25")
