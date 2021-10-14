@@ -7,8 +7,10 @@ import { miHistoria } from "./miHistoria";
 declare function origin(pos: Origin): void
 
 
-export const getPromptScreenWithConfiguration = (escena: Escena, textConfiguration: TextCompConf): void => {
+export const setUpScene = (escena: Escena,
+    textConfiguration: TextCompConf): void => {
 
+    // Opciones disponibles para elegir un camino
     const optionLetters = ["A", "B", "C", "D"]
 
     const layout = [
@@ -18,11 +20,16 @@ export const getPromptScreenWithConfiguration = (escena: Escena, textConfigurati
         "  C   D  ",
     ]
 
-    const layoutHeight = layout.length ?? 10, layoutWidth = layout[0].length ?? 10
+    // Height del layout
+    const layoutBlockHeight = height() / layout.length ?? 10,
+        layoutBlockWidth = width() / layout[0].length ?? 10
 
     const layOutConfig: LevelConf = {
-        height: height() / layoutHeight,
-        width: width() / layoutWidth,
+        height: layoutBlockHeight,
+        width: layoutBlockWidth,
+        /**
+         * Esta funcion, es para que cuando no haya nada, ponga nada
+         */
         any: (s: string) => undefined,
         "x": () => [
             text(escena.mensaje, textConfiguration),
@@ -30,6 +37,7 @@ export const getPromptScreenWithConfiguration = (escena: Escena, textConfigurati
         ]
     }
 
+    // Set up de las letras para el layout
     for (let i = 0; i < escena.listaOpciones.length; i++) {
 
         const letra = optionLetters[i]
@@ -40,18 +48,20 @@ export const getPromptScreenWithConfiguration = (escena: Escena, textConfigurati
                 text(texto, textConfiguration),
                 area({ cursor: "pointer" }),
                 origin("center"),
-                `Option_${letra}`,
+                letra, // Esto es el tag de la opcion
             ]
 
     }
 
+    // Agregar el nivel
     addLevel(layout, layOutConfig)
 
 
+    // Agregar opciones para las letras
     for (let i = 0; i < escena.listaOpciones.length; i++) {
 
         const letra = optionLetters[i]
-        const tag = `Option_${letra}`
+        const tag = letra
         const nextScene = escena.listaOpciones[i].siguienteEscenaId
         const prevScene = escena.listaOpciones[i].escenaAnteriorId
 

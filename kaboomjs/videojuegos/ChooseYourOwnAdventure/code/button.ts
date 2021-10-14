@@ -1,45 +1,35 @@
 import { Vec2, Character } from "kaboom"
 import { Opcion } from './interfaces';
+import { Origin } from 'kaboom';
 
-/**
- * Entrega un boton que puedes modificar
- * @param message string
- * @param position Vec2
- * @param callback () => void
- * @returns Character
- */
-export function addButton(message: string, position: Vec2, callback: () => void): Character {
+
+declare function origin(o: Origin): void
+
+export function addButton(txt: string, p: Vec2, f: () => void) {
 
     const btn = add([
-        text(message),
-        pos(position),
-        area({ cursor: "pointer" }),
+        rect(10, 10),
+        text(txt),
+        color(255, 255, 0),
+        pos(p),
+        area({ cursor: "pointer", }),
         scale(1),
-    ])
+        origin("center"),
+    ]);
 
-    btn.clicks(callback)
+    btn.clicks(f);
 
-    return btn
-}
+    btn.hovers(() => {
+        const t = time() * 10;
+        btn.color = rgb(
+            wave(0, 255, t),
+            wave(0, 255, t + 2),
+            wave(0, 255, t + 4),
+        );
+        btn.scale = vec2(1.2);
+    }, () => {
+        btn.scale = vec2(1);
 
-
-
-export function displayButtons(listOptions: Opcion[], gridHeigth: number, gridWidth: number, initialPos: Vec2) {
-
-    /*
-    Una cuadricula con un height, y width, con una posicion inicial en la esquina superior izquierda
-    ********************
-    *        *         *
-    *        *         * 
-    *        *         * 
-    ******************** 
-    *        *         * 
-    *        *         * 
-    ********************
-
-    */
-
-
-
+    });
 
 }

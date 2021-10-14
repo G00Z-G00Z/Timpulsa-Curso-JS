@@ -1,7 +1,7 @@
 import kaboom, { Origin, TextCompConf } from "kaboom";
 import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
-import { getPromptScreenWithConfiguration } from "./promtScreen";
+import { setUpScene } from "./promtScreen";
 import { Vec2 } from 'kaboom';
 
 
@@ -30,45 +30,30 @@ const textConfig: TextCompConf = {
 
 
 
-scene("escena", (escena: Escena, escenaAnterior: string) => {
+scene("escena", (escena: Escena, previousScene: string) => {
 
     layers([
         "background",
         "ui",
     ], "ui")
-
-
     addBackground("background")
 
-    getPromptScreenWithConfiguration(escena, textConfig)
-    action(() => {
-        cursor("default")
-        escena.esFinal && go("endScreen", escena, escenaAnterior)
-    })
 
+    if (escena.esFinal) {
+        add([
+            text(escena.mensaje, textConfig)
+        ])
 
+        addButton("Regresar al inicio?", vec2(width() / 2, height() / 2), () => {
+            go("escena", miHistoria.getScene("1"), "1")
+        })
+        addButton("Regresar escena anterior", vec2(width() / 2, 3 * height() / 4), () => {
+            go("escena", miHistoria.getScene(previousScene), "1")
+        })
 
-
-
-})
-
-
-
-scene("endScreen", (escena: Escena, escenaAnterior: string) => {
-
-    addBackground("background")
-
-    add([
-        text(escena.mensaje, textConfig)
-    ])
-
-    addButton("Regresar al inicio?", vec2(width() / 2, height() / 2), () => {
-        go("escena", miHistoria.getScene("1"), "1")
-    })
-    addButton("Regresar escena anterior", vec2(width() / 2, 3 * height() / 4), () => {
-        go("escena", miHistoria.getScene(escenaAnterior), "1")
-    })
-
+    } else {
+        setUpScene(escena, textConfig)
+    }
 
 })
 

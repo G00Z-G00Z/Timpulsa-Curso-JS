@@ -14,6 +14,7 @@ export const newEscena: fabricaEscena = (escenaId: string, mensaje: string, list
     });
 
     return {
+        id: escenaId,
         mensaje,
         listaOpciones,
         esFinal: false
@@ -26,8 +27,9 @@ export const newEscena: fabricaEscena = (escenaId: string, mensaje: string, list
  * @param mensaje Mensaje final
  * @returns Escena
  */
-export const newEnding: fabricaEnding = (mensaje: string) => {
+export const newEnding: fabricaEnding = (escenaId: string, mensaje: string) => {
     return {
+        id: escenaId,
         mensaje,
         listaOpciones: [],
         esFinal: true
@@ -54,12 +56,12 @@ export const newOpcion: fabricaOpcion = (texto: string, siguienteEscenaId: strin
 export const newHistoria: fabricaHistoria = () => {
     return {
         listaEscenas: {},
-        currentScene: "",
-        addScene(id: string | number, escena: Escena) {
-            this.listaEscenas[id] = escena
+
+        addScene(escena: Escena) {
+            this.listaEscenas[escena.id] = escena
         },
         getScene(id: string | number) {
-            this.currentScene = String(id)
+
             return this.listaEscenas[id]
         }
     }

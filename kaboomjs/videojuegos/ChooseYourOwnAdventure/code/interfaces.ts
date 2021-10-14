@@ -13,6 +13,7 @@ Información de una Escena
 */
 export interface Escena {
     mensaje: string,
+    id: string,
     listaOpciones: Opcion[],
     esFinal: boolean
 }
@@ -24,8 +25,7 @@ export interface Historia {
     listaEscenas: {
         [key: string]: Escena
     },
-    currentScene: string,
-    addScene(id: string | number, escena: Escena): void,
+    addScene(escena: Escena): void,
     getScene(id: string | number): Escena | undefined
 }
 /**
@@ -36,7 +36,7 @@ export type fabricaEscena = (escenaId: string, mensaje: string, listaOpciones: O
 /**
  * Funcion que fabrica escenas
  */
-export type fabricaEnding = (mensaje: string) => Escena
+export type fabricaEnding = (escenaId: string, mensaje: string) => Escena
 
 /**
  * Funcion que fabrica opciones
