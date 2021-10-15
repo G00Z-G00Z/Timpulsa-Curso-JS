@@ -18,7 +18,7 @@ scene(scenesId.escena, (escena: Escena, previousScene: string) => {
     getLayers()
     addBackground()
 
-    const { layOutConfig, layout } = setUpScene(escena, textConfigs.option)
+    const { layOutConfig, layout } = setUpScene(escena)
     addLevel(layout, layOutConfig)
 
 
