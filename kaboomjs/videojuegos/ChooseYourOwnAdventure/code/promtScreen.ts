@@ -1,5 +1,5 @@
 import { Escena } from "./interfaces";
-import { LevelConf, TextCompConf, Origin, Character, AreaComp, Vec2 } from 'kaboom';
+import { LevelConf, Origin, TextCompConf } from 'kaboom';
 import { miHistoria } from "./miHistoria";
 import { scenesId, textConfigs } from './stylesAndConfigs';
 
@@ -8,7 +8,7 @@ import { scenesId, textConfigs } from './stylesAndConfigs';
 declare function origin(pos: Origin): void
 
 
-export const setUpScene = (escena: Escena): {
+export const setUpScene = (escena: Escena, textConfigForPrompt: TextCompConf, textConfigForOption: TextCompConf): {
     layout: string[],
     layOutConfig: LevelConf
 } => {
@@ -37,7 +37,7 @@ export const setUpScene = (escena: Escena): {
          */
         any: (s: string) => undefined,
         "x": () => [
-            text(escena.mensaje, textConfigs.prompt),
+            text(escena.mensaje, textConfigForPrompt),
             origin("top")
         ]
     }
@@ -52,7 +52,7 @@ export const setUpScene = (escena: Escena): {
 
         layOutConfig[letra] = () =>
             [
-                text(texto, textConfigs.option),
+                text(texto, textConfigForOption),
                 area({ cursor: "pointer" }),
                 origin("center"),
                 letra, // Esto es el tag de la opcion

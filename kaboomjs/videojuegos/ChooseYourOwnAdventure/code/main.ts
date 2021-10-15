@@ -18,7 +18,7 @@ scene(scenesId.escena, (escena: Escena, previousScene: string) => {
     getLayers()
     addBackground()
 
-    const { layOutConfig, layout } = setUpScene(escena)
+    const { layOutConfig, layout } = setUpScene(escena, textConfigs.prompt, textConfigs.option)
     addLevel(layout, layOutConfig)
 
 
@@ -34,10 +34,10 @@ scene(scenesId.final, (escena: Escena, previousScene: string) => {
     ])
 
     addButton("Regresar al inicio?", vec2(width() / 2, height() / 2), () => {
-        go("escena", miHistoria.getScene("1"), "1")
+        go(scenesId.escena, miHistoria.getScene("1"), "1")
     })
     addButton("Regresar escena anterior", vec2(width() / 2, 3 * height() / 4), () => {
-        go("escena", miHistoria.getScene(previousScene), "1")
+        go(scenesId.escena, miHistoria.getScene(previousScene), "1")
     })
 
 })
