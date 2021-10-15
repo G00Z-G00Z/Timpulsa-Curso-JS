@@ -34,15 +34,15 @@ scene(scenesId.final, (escena: Escena, previousScene: string) => {
     ])
 
     addButton("Regresar al inicio?", vec2(width() / 2, height() / 2), () => {
-        go(scenesId.escena, miHistoria.getScene("1"), "1")
+        go(scenesId.escena, miHistoria.getScene(miHistoria.startingSceneId), miHistoria.startingSceneId)
     })
     addButton("Regresar escena anterior", vec2(width() / 2, 3 * height() / 4), () => {
-        go(scenesId.escena, miHistoria.getScene(previousScene), "1")
+        go(scenesId.escena, miHistoria.getScene(previousScene), miHistoria.startingSceneId)
     })
 
 })
 
-go("escena", miHistoria.getScene("1"))
+go("escena", miHistoria.getScene(miHistoria.startingSceneId))
 
 function addButton(txt: string, p: Vec2, f: () => void) {
 

@@ -53,10 +53,10 @@ export const newOpcion: fabricaOpcion = (texto: string, siguienteEscenaId: strin
  * Regresa una historia vacía
  * @returns Historia
  */
-export const newHistoria: fabricaHistoria = () => {
+export const newHistoria: fabricaHistoria = (startingSceneId: string) => {
     return {
         listaEscenas: {},
-
+        startingSceneId,
         addScene(escena: Escena) {
             this.listaEscenas[escena.id] = escena
         },

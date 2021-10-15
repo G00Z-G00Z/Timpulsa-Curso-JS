@@ -5,7 +5,7 @@ import { Historia } from './interfaces';
 // https://www.fantasy-magazine.com/fm/fiction/choose-your-own-adventure/
 
 
-export const miHistoria: Historia = newHistoria()
+export const miHistoria: Historia = newHistoria("1")
 
 miHistoria.addScene(
     newEscena("1",

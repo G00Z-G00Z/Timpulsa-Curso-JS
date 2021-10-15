@@ -25,6 +25,7 @@ export interface Historia {
     listaEscenas: {
         [key: string]: Escena
     },
+    readonly startingSceneId: string,
     addScene(escena: Escena): void,
     getScene(id: string | number): Escena | undefined
 }
@@ -46,4 +47,4 @@ export type fabricaOpcion = (texto: string, siguienteEscenaId: string) => Opcion
 /**
  * Es un objeto que devuelve un objeto de historia
  */
-export type fabricaHistoria = () => Historia
+export type fabricaHistoria = (startingSceneId: string) => Historia

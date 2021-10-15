@@ -46,12 +46,13 @@ export interface Escena {
 }
 
 /*
-Este es un objeto que guarda las escenas
+Este es un objeto que guarda las escenas 
 */
 export interface Historia {
 	listaEscenas: {
 		[key: string]: Escena;
 	};
+	readonly startingSceneId: string;
 	addScene(escena: Escena): void;
 	getScene(id: string | number): Escena | undefined;
 }
@@ -80,7 +81,7 @@ export type fabricaOpcion = (
 /**
  * Es un objeto que devuelve un objeto de historia
  */
-export type fabricaHistoria = () => Historia;
+export type fabricaHistoria = (startingSceneId: string) => Historia;
 ```
 
 # 🛠Comentarios generales sobre el compilador de `typescript`
