@@ -1,7 +1,7 @@
 import kaboom, { Origin } from "kaboom";
 import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
-import { setUpScene } from "./promtScreen";
+import { setUpScene } from "./setUpScenes";
 import { Vec2 } from 'kaboom';
 import { addBackground, getLayers, textConfigs, scenesId } from './stylesAndConfigs';
 
