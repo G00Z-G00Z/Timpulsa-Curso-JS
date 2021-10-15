@@ -1,4 +1,4 @@
-import { newEnding, newEscena, newHistoria, newOpcion } from './utils';
+import { newEnding, newEscena, newHistoria, newOpcion } from './factories';
 import { Historia } from './interfaces';
 
 
