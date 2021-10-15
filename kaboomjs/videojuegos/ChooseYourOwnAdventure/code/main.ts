@@ -4,6 +4,7 @@ import { Escena } from './interfaces';
 import { setUpScene } from "./setUpScenes";
 import { Vec2 } from 'kaboom';
 import { addBackground, getLayers, textConfigs, scenesId } from './stylesAndConfigs';
+import { addButton } from "./button";
 
 
 kaboom();
@@ -44,31 +45,3 @@ scene(scenesId.final, (escena: Escena, previousScene: string) => {
 
 go("escena", miHistoria.getScene(miHistoria.startingSceneId))
 
-function addButton(txt: string, p: Vec2, f: () => void) {
-
-    const btn = add([
-        rect(10, 10),
-        text(txt, textConfigs.prompt),
-        color(255, 255, 0),
-        pos(p),
-        area({ cursor: "pointer", }),
-        scale(1),
-        origin("center"),
-    ]);
-
-    btn.clicks(f);
-
-    btn.hovers(() => {
-        const t = time() * 10;
-        btn.color = rgb(
-            wave(0, 255, t),
-            wave(0, 255, t + 2),
-            wave(0, 255, t + 4),
-        );
-        btn.scale = vec2(1.2);
-    }, () => {
-        btn.scale = vec2(1);
-
-    });
-
-}

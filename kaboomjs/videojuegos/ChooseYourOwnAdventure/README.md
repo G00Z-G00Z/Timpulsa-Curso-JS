@@ -20,6 +20,7 @@ Created: September 29, 2021 8:10 PM
 - El cambio de escena tienen que estar dentro de un `action`
 - El objeto de `historia` usa la keyword `this`
 - Las escenas se pasan argumentos para cambiar de escena
+- El hover, tienes que pasarle 2 funciones. Tienes que pasarla 1 para que deje de hacer hover, y otra para hacer algo cuando este en hover
 
 ## 🏥Interfaces del proyecto
 

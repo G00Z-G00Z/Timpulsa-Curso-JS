@@ -1,7 +1,7 @@
 import { Escena } from "./interfaces";
 import { LevelConf, Origin, TextCompConf } from 'kaboom';
 import { miHistoria } from "./miHistoria";
-import { scenesId, textConfigs } from './stylesAndConfigs';
+import { scenesId } from './stylesAndConfigs';
 
 
 
@@ -68,7 +68,11 @@ export const setUpScene = (escena: Escena, textConfigForPrompt: TextCompConf, te
 
         hovers(letra, (btn) => {
             btn.scale = vec2(1.2)
-        })
+            return () => {
+                btn.scale = vec2(1)
+            }
+        }
+        )
 
     }
 
