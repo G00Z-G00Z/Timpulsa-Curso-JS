@@ -66,14 +66,6 @@ export const setUpScene = (escena: Escena, textConfigForPrompt: TextCompConf, te
 
         })
 
-        hovers(letra, (btn) => {
-            btn.scale = vec2(1.2)
-            return () => {
-                btn.scale = vec2(1)
-            }
-        }
-        )
-
     }
 
 
