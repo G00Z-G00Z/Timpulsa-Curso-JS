@@ -1,7 +1,8 @@
-import { Escena } from "./interfaces";
-import { LevelConf, Origin, TextCompConf } from 'kaboom';
+import { Escena, Opcion } from './interfaces';
+import { Character, LevelConf, Origin, TextCompConf, TextComp, AreaComp, Vec2 } from 'kaboom';
 import { miHistoria } from "./miHistoria";
-import { scenesId } from './stylesAndConfigs';
+import { scenesId, textConfigs } from './stylesAndConfigs';
+import { positionInGrid } from "./gridSystem";
 
 
 
@@ -74,4 +75,95 @@ export const setUpScene = (escena: Escena, textConfigForPrompt: TextCompConf, te
 
 
 
+export function setUpSceneWithGrid(
+    escena: Escena
+): void {
+
+
+    const layout = [
+        "  x  ",
+        "     ",
+        " A B ",
+        " C D ",
+    ]
+
+    const rows = 4
+    const cols = 9
+
+    const grid = vec2(rows, cols)
+
+    positionInGrid(grid, vec2(2, 1), [
+        text(escena.mensaje, textConfigs.prompt)
+    ])
+
+    let opcion: Opcion
+
+    opcion = escena.listaOpciones[0]
+
+    if (opcion) {
+        const { siguienteEscenaId, texto, escenaAnteriorId } = opcion
+
+
+        const elemento: Character<AreaComp & { scale: Vec2 }> = positionInGrid(grid, vec2(r, c),
+            [
+                text(texto, textConfigs.option),
+                area({ cursor: "pointer" })
+            ])
+
+
+        const nextScene = miHistoria.getScene(siguienteEscenaId)
+        const siguienteEscena = nextScene?.esFinal ? scenesId.final : scenesId.escena
+
+        elemento.clicks(() => {
+            go(siguienteEscena, nextScene, escenaAnteriorId)
+        })
+
+        elemento.hovers(() => {
+            elemento.scale = vec2(1)
+        }, () => {
+            elemento.scale = vec2(2)
+        })
+    }
+
+    let counter = 0
+    for (let r = rows - 2; r < rows; r++) {
+        for (let c = 1; c < cols; c += 2) {
+
+            const opcion = escena.listaOpciones[counter]
+            counter++
+            if (!opcion)
+                break
+
+            const { siguienteEscenaId, texto, escenaAnteriorId } = opcion
+
+
+            const elemento: Character<AreaComp & { scale: Vec2 }> = positionInGrid(grid, vec2(r, c),
+                [
+                    text(texto, textConfigs.option),
+                    area({ cursor: "pointer" })
+                ])
+
+
+            const nextScene = miHistoria.getScene(siguienteEscenaId)
+            const siguienteEscena = nextScene?.esFinal ? scenesId.final : scenesId.escena
+
+            elemento.clicks(() => {
+                go(siguienteEscena, nextScene, escenaAnteriorId)
+            })
+
+            elemento.hovers(() => {
+                elemento.scale = vec2(1)
+            }, () => {
+                elemento.scale = vec2(2)
+            })
+
+
+
+        }
+
+
+    }
+
+
+}
 

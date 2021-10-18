@@ -1,7 +1,7 @@
 import kaboom, { Origin } from "kaboom";
 import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
-import { setUpScene } from "./setUpScenes";
+import { setUpScene, setUpSceneWithGrid } from "./setUpScenes";
 import { addBackground, getLayers, textConfigs, scenesId } from './stylesAndConfigs';
 import { addClickableText } from "./clickableText";
 
@@ -19,9 +19,10 @@ scene(scenesId.escena, (escena: Escena, previousScene: string) => {
     getLayers()
     addBackground()
 
-    const { layOutConfig, layout } = setUpScene(escena, textConfigs.prompt, textConfigs.option)
-    addLevel(layout, layOutConfig)
+    // const { layOutConfig, layout } = setUpScene(escena, textConfigs.prompt, textConfigs.option)
+    // addLevel(layout, layOutConfig)
 
+    setUpSceneWithGrid(escena)
 
 })
 scene(scenesId.final, (escena: Escena, previousScene: string) => {

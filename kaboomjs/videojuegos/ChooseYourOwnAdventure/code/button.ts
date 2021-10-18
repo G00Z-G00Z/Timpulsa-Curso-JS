@@ -1,5 +1,4 @@
-import { Vec2, Character } from "kaboom"
-import { Opcion } from './interfaces';
+import { Vec2 } from "kaboom"
 import { Origin } from 'kaboom';
 
 
