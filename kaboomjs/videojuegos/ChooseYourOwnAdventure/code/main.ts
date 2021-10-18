@@ -5,6 +5,8 @@ import { setUpScene } from "./setUpScenes";
 import { Vec2 } from 'kaboom';
 import { addBackground, getLayers, textConfigs, scenesId } from './stylesAndConfigs';
 import { addButton } from "./button";
+import { addClickableText } from "./clickableText";
+
 
 
 kaboom();
@@ -34,10 +36,10 @@ scene(scenesId.final, (escena: Escena, previousScene: string) => {
         text(escena.mensaje, textConfigs.prompt)
     ])
 
-    addButton("Regresar al inicio?", vec2(width() / 2, height() / 2), () => {
+    addClickableText("Regresar al principo", textConfigs.option, vec2(width() / 2, height() / 2), () => {
         go(scenesId.escena, miHistoria.getScene(miHistoria.startingSceneId), miHistoria.startingSceneId)
     })
-    addButton("Regresar escena anterior", vec2(width() / 2, 3 * height() / 4), () => {
+    addClickableText("Regresar escena anterior", textConfigs.option, vec2(width() / 2, 3 * height() / 4), () => {
         go(scenesId.escena, miHistoria.getScene(previousScene), miHistoria.startingSceneId)
     })
 

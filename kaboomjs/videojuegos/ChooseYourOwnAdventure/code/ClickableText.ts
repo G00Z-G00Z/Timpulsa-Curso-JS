@@ -4,6 +4,8 @@ import { Origin } from 'kaboom';
 declare function origin(pos: Origin): void
 export function addClickableText(texto: string, textConfig: TextCompConf, position: Vec2, clickAction: () => void): void {
 
+
+
     const btn = add([
         text(texto, textConfig),
         pos(position),
