@@ -16,8 +16,5 @@ export function addClickableText(texto: string, textConfig: TextCompConf, positi
 
     btn.clicks(clickAction);
 
-    btn.hovers(() => {
-        btn.scale = vec2(1.5);
-    });
 
 }

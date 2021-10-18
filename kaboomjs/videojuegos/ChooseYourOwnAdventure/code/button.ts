@@ -19,17 +19,6 @@ export function addButton(txt: string, p: Vec2, f: () => void) {
 
     btn.clicks(f);
 
-    btn.hovers(() => {
-        const t = time() * 10;
-        btn.color = rgb(
-            wave(0, 255, t),
-            wave(0, 255, t + 2),
-            wave(0, 255, t + 4),
-        );
-        btn.scale = vec2(1.2);
-    }, () => {
-        btn.scale = vec2(1);
 
-    });
 
 }
