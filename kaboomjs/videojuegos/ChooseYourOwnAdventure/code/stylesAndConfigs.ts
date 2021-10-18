@@ -1,4 +1,4 @@
-import { CompList, TextCompConf } from "kaboom";
+import { TextCompConf } from "kaboom";
 
 
 const layersId: {
