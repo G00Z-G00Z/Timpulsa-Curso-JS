@@ -62,7 +62,7 @@ export function setUpSceneWithGrid(
             })
 
             boton.hovers(() => {
-                boton.scale = vec2(2)
+                boton.scale = vec2(1.2)
             }, () => {
                 boton.scale = vec2(1)
             })

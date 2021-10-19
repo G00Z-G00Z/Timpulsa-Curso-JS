@@ -22,6 +22,7 @@ Created: September 29, 2021 8:10 PM
 - Las escenas se pasan argumentos para cambiar de escena
 - El hover, tienes que pasarle 2 funciones. Tienes que pasarla 1 para que deje de hacer hover, y otra para hacer algo cuando este en hover
 - El hover no funciona cuando tienes un layout
+- Puedes hacer un sistema de grid y luego puedes agregar las acciones de los botones
 
 ## 🏥Interfaces del proyecto
 
