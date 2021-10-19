@@ -1,4 +1,4 @@
-import kaboom, { Origin } from "kaboom";
+import kaboom from "kaboom";
 import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
 import { setUpSceneWithGrid } from "./setUpScenes";
@@ -9,18 +9,11 @@ import { addClickableText } from "./clickableText";
 
 kaboom();
 
-// Declaration of origin function
-declare function origin(pos: Origin): void
-
-
 scene(scenesId.escena, (escena: Escena, previousScene: string) => {
 
 
     getLayers()
     addBackground()
-
-    // const { layOutConfig, layout } = setUpScene(escena, textConfigs.prompt, textConfigs.option)
-    // addLevel(layout, layOutConfig)
 
     setUpSceneWithGrid(escena)
 

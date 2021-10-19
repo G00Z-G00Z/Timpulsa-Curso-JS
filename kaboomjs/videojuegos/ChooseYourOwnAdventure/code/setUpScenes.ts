@@ -1,5 +1,5 @@
-import { Escena, Opcion } from './interfaces';
-import { Character, LevelConf, Origin, TextCompConf, ScaleComp, TextComp, AreaComp, Vec2 } from 'kaboom';
+import { Escena } from './interfaces';
+import { Character, Origin, ScaleComp, AreaComp } from 'kaboom';
 import { miHistoria } from "./miHistoria";
 import { scenesId, textConfigs } from './stylesAndConfigs';
 import { getGridPositionFunction, positionInGrid } from './gridSystem';
