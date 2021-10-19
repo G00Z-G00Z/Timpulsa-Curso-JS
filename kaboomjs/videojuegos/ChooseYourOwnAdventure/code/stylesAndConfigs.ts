@@ -39,11 +39,11 @@ export const textConfigs: {
     option: TextCompConf
 } = {
     prompt: {
-        size: width() * 0.4,
-        width: width() * .9
+        size: vec2(width()).x,
+        width: vec2(width()).x
     },
     option: {
-        size: width() * 0.4,
-        width: width() * .9
+        size: vec2(width()).x,
+        width: vec2(width()).x
     }
 }

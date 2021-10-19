@@ -1,77 +1,76 @@
-import { Escena } from "./interfaces";
-import { LevelConf, Origin, TextCompConf } from 'kaboom';
+import { Escena, Opcion } from './interfaces';
+import { Character, LevelConf, Origin, TextCompConf, ScaleComp, TextComp, AreaComp, Vec2 } from 'kaboom';
 import { miHistoria } from "./miHistoria";
-import { scenesId } from './stylesAndConfigs';
+import { scenesId, textConfigs } from './stylesAndConfigs';
+import { getGridPositionFunction, positionInGrid } from './gridSystem';
 
 
 
 declare function origin(pos: Origin): void
 
 
-export const setUpScene = (escena: Escena, textConfigForPrompt: TextCompConf, textConfigForOption: TextCompConf): {
-    layout: string[],
-    layOutConfig: LevelConf
-} => {
+export function setUpSceneWithGrid(
+    escena: Escena
+): void {
 
-    // Opciones disponibles para elegir un camino
-    const optionLetters = ["A", "B", "C", "D"]
 
-    // Como se va a ver la pantalla
     const layout = [
-        "    x    ",
-        "         ",
-        "  A   B  ",
-        "  C   D  ",
+        "  x  ",
+        "     ",
+        " A B ",
+        " C D ",
     ]
 
-    // Height del layout
-    const layoutBlockHeight = height() / layout.length ?? 10,
-        layoutBlockWidth = width() / layout[0].length ?? 10
+    const rows = 4
+    const cols = 5
 
-    // Configuracion del grid
-    const layOutConfig: LevelConf = {
-        height: layoutBlockHeight,
-        width: layoutBlockWidth,
-        /**
-         * Esta funcion, es para que cuando no haya nada, ponga nada. Se puede omitir
-         */
-        any: (s: string) => undefined,
-        "x": () => [
-            text(escena.mensaje, textConfigForPrompt),
-            origin("top")
-        ]
+    const grid = vec2(rows, cols)
+
+    const putInGrid = getGridPositionFunction<Character<AreaComp & ScaleComp>>(grid)
+
+
+
+    putInGrid(vec2(2, 0), [
+        text(escena.mensaje, textConfigs.prompt)
+    ], "top")
+
+
+    let counter = 0
+
+
+    for (let j = cols - 2; j < cols; j++) {
+        for (let i = 1; i < rows; i += 2) {
+
+            const opcion = escena.listaOpciones[counter]
+            counter++
+
+            if (!opcion)
+                break
+
+            const { texto, siguienteEscenaId, escenaAnteriorId } = opcion
+
+            const nextScene = miHistoria.getScene(siguienteEscenaId)
+            const siguienteEscena = nextScene?.esFinal ? scenesId.final : scenesId.escena
+
+            const boton = putInGrid(vec2(i, j), [
+                text(texto, textConfigs.option),
+                area({ cursor: "pointer" })
+            ], "center")
+
+            boton.clicks(() => {
+                go(siguienteEscena, nextScene, escenaAnteriorId)
+            })
+
+            boton.hovers(() => {
+                boton.scale = vec2(1.2)
+            }, () => {
+                boton.scale = vec2(1)
+            })
+
+
+        }
+
     }
 
-    // Set up de las letras para el layout
-    for (let i = 0; i < escena.listaOpciones.length; i++) {
-
-        const letra = optionLetters[i]
-
-        const { texto, siguienteEscenaId, escenaAnteriorId } = escena.listaOpciones[i]
-
-
-        layOutConfig[letra] = () =>
-            [
-                text(texto, textConfigForOption),
-                area({ cursor: "pointer" }),
-                origin("center"),
-                letra, // Esto es el tag de la opcion
-            ]
-
-        const nextScene = miHistoria.getScene(siguienteEscenaId)
-        const siguienteEscena = nextScene?.esFinal ? scenesId.final : scenesId.escena
-
-        clicks(letra, () => {
-            go(siguienteEscena, nextScene, escenaAnteriorId)
-
-        })
-
-    }
-
-
-    return { layout, layOutConfig }
 }
-
-
-
 
