@@ -88,52 +88,26 @@ export function setUpSceneWithGrid(
     ]
 
     const rows = 4
-    const cols = 9
+    const cols = 5
 
     const grid = vec2(rows, cols)
 
-    positionInGrid(grid, vec2(2, 1), [
+    positionInGrid(grid, vec2(2, 0), [
         text(escena.mensaje, textConfigs.prompt)
-    ])
-
-    let opcion: Opcion
-
-    opcion = escena.listaOpciones[0]
-
-    if (opcion) {
-        const { siguienteEscenaId, texto, escenaAnteriorId } = opcion
+    ], "top")
 
 
-        const elemento: Character<AreaComp & { scale: Vec2 }> = positionInGrid(grid, vec2(r, c),
-            [
-                text(texto, textConfigs.option),
-                area({ cursor: "pointer" })
-            ])
-
-
-        const nextScene = miHistoria.getScene(siguienteEscenaId)
-        const siguienteEscena = nextScene?.esFinal ? scenesId.final : scenesId.escena
-
-        elemento.clicks(() => {
-            go(siguienteEscena, nextScene, escenaAnteriorId)
-        })
-
-        elemento.hovers(() => {
-            elemento.scale = vec2(1)
-        }, () => {
-            elemento.scale = vec2(2)
-        })
-    }
 
     let counter = 0
     for (let r = rows - 2; r < rows; r++) {
-        for (let c = 1; c < cols; c += 2) {
+        for (let c = 0; c < cols; c += 2) {
 
             const opcion = escena.listaOpciones[counter]
             counter++
             if (!opcion)
                 break
 
+            debug.log(`Opcion ${counter} = (${r}, ${c}) en (${rows}, ${cols})`)
             const { siguienteEscenaId, texto, escenaAnteriorId } = opcion
 
 
@@ -141,7 +115,7 @@ export function setUpSceneWithGrid(
                 [
                     text(texto, textConfigs.option),
                     area({ cursor: "pointer" })
-                ])
+                ], "bot")
 
 
             const nextScene = miHistoria.getScene(siguienteEscenaId)
@@ -152,9 +126,9 @@ export function setUpSceneWithGrid(
             })
 
             elemento.hovers(() => {
-                elemento.scale = vec2(1)
-            }, () => {
                 elemento.scale = vec2(2)
+            }, () => {
+                elemento.scale = vec2(1)
             })
 
 
