@@ -25,3 +25,16 @@ export function positionInGrid<T>(grid: Vec2, coordinate: Vec2, configs: CompLis
     return elemento
 }
 
+/**
+ * Factory of grid functions
+ * @param grid Grid in screen
+ * @returns Shorten function to use grid
+ */
+export function getGridPositionFunction<T>(grid: Vec2): (coordinate: Vec2, configs: CompList<any>, originInObj?: Origin) => Character<T> {
+
+    return (coordinate: Vec2, configs: CompList<any>, originInObj: Origin = "center") => {
+        return positionInGrid<T>(grid, coordinate, configs, originInObj)
+    }
+
+}
+

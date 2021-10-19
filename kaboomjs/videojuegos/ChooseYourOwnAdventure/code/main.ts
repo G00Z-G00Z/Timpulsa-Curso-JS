@@ -1,7 +1,7 @@
 import kaboom, { Origin } from "kaboom";
 import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
-import { setUpScene, setUpSceneWithGrid } from "./setUpScenes";
+import { setUpSceneWithGrid } from "./setUpScenes";
 import { addBackground, getLayers, textConfigs, scenesId } from './stylesAndConfigs';
 import { addClickableText } from "./clickableText";
 
