@@ -8,18 +8,21 @@ import { getGridPositionFunction, positionInGrid } from './gridSystem';
 
 declare function origin(pos: Origin): void
 
-
-export function setUpSceneWithGrid(
-    escena: Escena
-): void {
-
-
-    const layout = [
+/**
+ * Pone la escena en un formato con este layout
+    Layout imaginario (grid(5,4))
         "  x  ",
         "     ",
         " A B ",
         " C D ",
-    ]
+    Donde la x, es el mensaje de la escena
+    Y las letras son las opciones
+  
+ * @param escena Escena
+ */
+export function setUpSceneWithGrid(
+    escena: Escena
+): void {
 
     const rows = 4
     const cols = 5

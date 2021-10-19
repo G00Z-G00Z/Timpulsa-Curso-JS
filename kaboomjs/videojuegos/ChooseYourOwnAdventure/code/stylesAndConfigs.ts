@@ -1,6 +1,8 @@
 import { TextCompConf } from "kaboom";
 
-
+/**
+ * Id de los layers
+ */
 const layersId: {
     background: string,
     ui: string
@@ -9,7 +11,9 @@ const layersId: {
     ui: "ui"
 }
 
-
+/**
+ * Nombres de las escenas
+ */
 export const scenesId: {
     escena: string,
     final: string
@@ -18,6 +22,10 @@ export const scenesId: {
     final: "ending"
 }
 
+
+/**
+ * Funcion que agrega los layers
+ */
 export const getLayers = () => {
     layers([
         layersId.background,
@@ -25,7 +33,9 @@ export const getLayers = () => {
     ], layersId.ui)
 }
 
-
+/**
+ * Funcion que agrega el fondo
+ */
 export const addBackground = () => {
     add([
         rect(width(), height()),
@@ -34,6 +44,9 @@ export const addBackground = () => {
     ])
 }
 
+/**
+ * Configuraciones de los textos
+ */
 export const textConfigs: {
     prompt: TextCompConf,
     option: TextCompConf
