@@ -1,43 +1,24 @@
-import { Vec2, Character, CompList, Origin } from 'kaboom';
+import { Vec2 } from 'kaboom';
+import { FabricaGrid } from './interfaces';
 
 
-declare function origin(o: Origin): void
+export const newGrid: FabricaGrid = (grid: Vec2) => {
 
-/**
- * Positions a caracter exactly where you say in the grid (Considering an origin)
- * Por ejemplo, si le dices que hay un grid de 4 x 4, divide la pantalla en 4 x 4
- * Se empieza a contar desde el 0 (entonces, de posiciones en x van del 0 - 3)
- * Las configs, son lo que se va a pasar a la función "add"
- * @param grid [number, number]
- * @param coordinate [number, number]]
- * @param configs Normal configs
- * @returns Character
- */
-export function positionInGrid<T>(grid: Vec2, coordinate: Vec2, configs: CompList<any>, originInObj: Origin = "center"): Character<T> {
+    return {
+        maxColumns: grid.x,
+        maxRows: grid.y,
+        blockDimensions: {
+            height: height() / grid.y,
+            width: width() / grid.x
+        },
+        getPositionFromCoordinates(coordinates: Vec2) {
 
-    const position = pos(
-        (width() / grid.x) * ((coordinate.x)),
-        (height() / grid.y) * ((coordinate.y))
-    )
+            return vec2(
+                this.blockDimensions.width * coordinates.x,
+                this.blockDimensions.height * coordinates.y
+            )
 
-    configs.push(origin(originInObj))
-    configs.push(position)
 
-    const elemento = add(configs)
-
-    return elemento
-}
-
-/**
- * Si le das un grid, genera una función que ya tiene configurado un grid, para que no tengas que estar pasandole el grid cada vez que la invoques
- * @param grid Grid in screen
- * @returns Shorten function to use grid
- */
-export function getGridPositionFunction<T>(grid: Vec2): (coordinate: Vec2, configs: CompList<any>, originInObj?: Origin) => Character<T> {
-
-    return (coordinate: Vec2, configs: CompList<any>, originInObj: Origin = "center") => {
-        return positionInGrid<T>(grid, coordinate, configs, originInObj)
+        }
     }
-
 }
-
