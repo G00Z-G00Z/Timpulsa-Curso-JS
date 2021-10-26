@@ -38,6 +38,8 @@ La posición de una serpiente, puede ser un grid, entonces convendría hacer un 
 
 # Comentarios generales
 
+- El movimiento va a tener que ser con render, para que sea más sencillo
+
 # Ideas de otros lugares y links
 
 - [https://www.edureka.co/blog/snake-game-with-pygame/](https://www.edureka.co/blog/snake-game-with-pygame/)
