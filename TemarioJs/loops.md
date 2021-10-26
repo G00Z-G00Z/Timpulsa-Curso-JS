@@ -5,7 +5,6 @@
 ## Introducción
 
 > Los bucles ofrecen una forma rápida y sencilla de hacer algo repetidamente.
->
 
 ### Ejemplo
 
@@ -44,14 +43,18 @@ for (let a = 0; a < 10; a++)    //  for(expresiónInicial ; condición; actualiz
 > El do...while siempre se ejecuta una vez antes de que se verifique la condición. (Para ejecutar varias instrucciones, usa una declaración de bloque ({ ... }) para agrupar esas declaraciones).
 
 ```javascript
+let x = 5;
 while(x!=0)                      //  while(condición) En este caso que x sea diferente de 0
     console.log("Hola");         //  Instrucción     
     
 do{
-     console.log("Hola");       //  Instrucción   
+    x--;
+    console.log("Hola");       //  Instrucción   
 }while(x!=0)                    //  while(condición) En este caso que x sea diferente de 0
      
 ```
+
+> En este caso, el primer cíclo se repetirá infinitamente, ya que no hay nada dentro del ciclo que cambie el valor de la variable x.
 ---
 
 ## Ejercicios y solución

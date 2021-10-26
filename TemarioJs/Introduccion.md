@@ -21,6 +21,5 @@ A grandes rasgos un lenguaje de programación es una serie de símbolos, reglas 
 
 - https://programas.cuaed.unam.mx/repositorio/moodle/pluginfile.php/1023/mod_resource/content/1/contenido/index.html
 - https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/What_is_JavaScript
-- 
 
 [Go to the top](#Introducción)

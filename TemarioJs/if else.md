@@ -49,6 +49,16 @@ if(materia=="español" || materia=="matematicas")
     console.log("Es un curso básico")
 
 ```
+> Para enlazar varias condiciones se puede colocar una condición justo después de un else.
+
+```javascript
+if(color=="Rojo")
+    console.log("Manzana");
+else if(color=="amarillo")
+    console.log("Plátano");
+else if(color=="Verde" )
+    console.log("Pera");
+```
 
 ---
 ## Ejercicios y solución

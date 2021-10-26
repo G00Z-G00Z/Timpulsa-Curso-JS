@@ -9,10 +9,11 @@
   
 Despues presiona el boton de "New repl".
  ![Opciones del menú](https://docs.replit.com/images/tutorials/01-introduction/01-01-new-repl.png)
- El apartado marcado con el número 2 puedes seleccionar el lenguaje de programación, para este curso estaremos utilizando tanto node (javascript), como kaboomjs despues ponle un nombre y presiona crear repl.
+ El apartado marcado con el número 2 puedes seleccionar el lenguaje de programación, para este curso estaremos utilizando tanto nodejs (javascript), como kaboomjs, para este ejemplo seleccionaremos nodejs, despues ponle un nombre y presiona crear repl.
  
  Dentro del repl, se debe observar algo parecido a esto.
  ![Interfaz de replit](https://cms.replit.com/assets/kaboom/editor.png)
+ 
  A la izquierda se pueden observar los archivos.
  A la derecha se encuentra la consola.
 ## Ejercicios y solución

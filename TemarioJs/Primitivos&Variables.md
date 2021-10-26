@@ -21,6 +21,12 @@ let miEdad;
 ```
 > Actualmente no tienen ningún valor, son contenedores vacíos.
 
+> Tambén se pueden declarar variables constantes, con la particularidad de que estas no se pueden cambiar por medio de la reasignación
+
+```javascript
+const edad = 15;
+```
+
 ---
 
 ## Iniciar una variable

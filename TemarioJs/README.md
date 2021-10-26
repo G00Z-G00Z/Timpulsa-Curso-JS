@@ -9,7 +9,7 @@ Cuando agregres un archivo .md, porfavor actualiza el .md.
 *Recomendación*: Para llevar un control de los temas, favor de insertar los temas en un *pull-request* para que sean evaluados por los demás colaboradores. 
 
 
-## Hola 
+## ¿Qué deben de incluir los temas?
 
 Los temas deben de presentar: 
 - Una explicación **Breve** pero *consisa* del tema. 
