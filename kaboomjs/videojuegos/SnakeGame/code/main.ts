@@ -1,63 +1,46 @@
 import kaboom from "kaboom";
 import { newGrid } from './gridSystem';
 import { Origin } from 'kaboom';
+import { newSnake } from "./Snake";
 kaboom();
 
 
 declare function origin(o: Origin): any
 
 scene("game", () => {
-    const grid = newGrid(vec2(2, 2))
+    const grid = newGrid(vec2(40, 18))
 
-    // add([
-    //     rect(grid.blockDimensions.width, grid.blockDimensions.height),
-    //     pos(grid.getPositionFromCoordinates(vec2(0, 1)))
-    //     , outline(10, rgb(10, 12, 200)),
-    //     origin("topleft")
-    // ])
-
+    add([
+        rect(width(), height()),
+        color(rgb(0, 0, 0))
+    ])
 
     const { height: bHeight, width: bWidth } = grid.blockDimensions
 
-    const block = add([
-        rect(bWidth, bHeight),
-        pos(grid.getPositionFromCoordinates(vec2(0, 0))),
-        origin("topleft"),
-        color(rgb(10, 12, 200)),
-        scale(1),
-    ])
+    const snake = newSnake(grid, vec2(5, 5))
 
-    const moveSpeed = {
-        hotizontal: grid.blockDimensions.width,
-        vertical: grid.blockDimensions.height
+    let isGrow = false
+
+    loop(1, () => {
+        isGrow && snake.grow()
+        isGrow = !isGrow
+        snake.move(snake.direction)
     }
+    )
+
 
     keyDown("left", () => {
-        block.move(vec2(-moveSpeed.hotizontal, 0))
+        snake.direction = "left"
     })
-
     keyDown("right", () => {
-        block.move(vec2(moveSpeed.hotizontal, 0))
+        snake.direction = "right"
     })
-
-    keyDown("up", () => {
-        block.move(vec2(0, -moveSpeed.vertical))
-    })
-
     keyDown("down", () => {
-        block.move(vec2(0, moveSpeed.vertical))
+        snake.direction = "down"
     })
-
-
-
-
-
-
-
-
-
-
-
+    keyDown("up", () => {
+        snake.direction = "up"
+    })
 
 
 })

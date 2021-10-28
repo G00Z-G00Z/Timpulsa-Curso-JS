@@ -14,15 +14,20 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
         area(),
         pos(grid.getPositionFromCoordinates(initialCoords)),
         color(rgb(0, 255, 0)),
+        outline(1, rgb(0, 0, 0)),
         SnakeTags.head
     ])
 
+
     const snake: Snake = {
         direction: 'up',
+        hasGrown: false,
         body: [
             [head, initialCoords]
         ],
         grow() {
+
+            this.hasGrown = true;
 
             const lastPositionCoords = this.body[this.body.length - 1][1]
 
@@ -31,6 +36,8 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
                 area(),
                 pos(grid.getPositionFromCoordinates(lastPositionCoords)),
                 color(rgb(0, 255, 0)),
+                outline(1, rgb(0, 0, 0)),
+                SnakeTags.body
             ])
 
             this.body.push([newBody, lastPositionCoords])
@@ -38,13 +45,56 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
         },
         move(direction: Direction) {
 
-            for (let i = this.body.length - 1; i > 0; i++) {
+            this.direction = direction
 
-                this.body[i][1] = this.body[i - 1][1]
+            const firstIndex = this.hasGrown ? this.body.length - 2 : this.body.length - 1
+
+            // Goes backwards in the snake's body and updates position
+            for (let i = firstIndex; i > 0; i--) {
+
+                this.body[i][1] = this.body[i - 1][1].clone() // Tiene que ser clone, porque este es un objeto, entonces se pasa por referencia
                 this.body[i][0].moveTo(grid.getPositionFromCoordinates(this.body[i][1]))
+
             }
 
-            this.body[0][1].x++
+            this.hasGrown = false
+
+            // Move head
+            switch (direction) {
+                case "up":
+                    this.body[0][1].y--
+                    break;
+
+                case "down":
+                    this.body[0][1].y++
+                    break;
+
+                case "left":
+                    this.body[0][1].x--
+                    break;
+
+                case "right":
+                    this.body[0][1].x++
+                    break;
+                default:
+                    break;
+            }
+
+            //Check boundaries and reset if needed
+            if (this.body[0][1].x < 0) {
+                this.body[0][1].x = grid.maxColumns - 1
+            }
+            if (this.body[0][1].x > grid.maxColumns - 1) {
+                this.body[0][1].x = 0
+            }
+            if (this.body[0][1].y < 0) {
+                this.body[0][1].y = grid.maxRows - 1
+            }
+            if (this.body[0][1].y > grid.maxRows - 1) {
+                this.body[0][1].y = 0
+            }
+
+
             this.body[0][0].moveTo(grid.getPositionFromCoordinates(this.body[0][1]))
 
 

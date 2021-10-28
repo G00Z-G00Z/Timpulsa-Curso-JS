@@ -39,10 +39,11 @@ La posición de una serpiente, puede ser un grid, entonces convendría hacer un 
 # Comentarios generales
 
 - El movimiento va a tener que ser con render, para que sea más sencillo
+- Cuando se actualiza el movimiento de la serpiente, tiene que usarse un Vec2.clone(), ya que como es un objeto, se pasa por _referencia_. Entonces se necesita el clone, para que se pase por value
 
 # Ideas de otros lugares y links
 
 - [https://www.edureka.co/blog/snake-game-with-pygame/](https://www.edureka.co/blog/snake-game-with-pygame/)
 - [https://www.youtube.com/watch?v=QTcIXok9wNY](https://www.youtube.com/watch?v=QTcIXok9wNY)
 
-[game_url]: https://replit.com/@EduardoGmez1/SnakeGame#code/main.js
+[game_url]: https://replit.com/@EduardoGmez1/SnakeGame2#code/main.js

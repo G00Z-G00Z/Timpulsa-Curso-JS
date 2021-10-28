@@ -50,6 +50,9 @@ export interface Snake {
      */
     move(direction: Direction): void
 
+    // indicates if the snake has just gotten a new block
+    hasGrown: boolean
+
 
 }
 
