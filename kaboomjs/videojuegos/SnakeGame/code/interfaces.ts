@@ -53,6 +53,9 @@ export interface Snake {
     // indicates if the snake has just gotten a new block
     hasGrown: boolean
 
+    // Destroys the snake
+    kill(): void
+
 
 }
 

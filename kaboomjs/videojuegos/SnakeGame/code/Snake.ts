@@ -98,6 +98,16 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
             this.body[0][0].moveTo(grid.getPositionFromCoordinates(this.body[0][1]))
 
 
+        },
+
+        kill() {
+
+            for (let i = 0; i < this.body.length; i++) {
+                const block = this.body[i];
+                block[0].destroy()
+            }
+
+            this.body = []
         }
     }
 
