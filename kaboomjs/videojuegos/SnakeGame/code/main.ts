@@ -19,6 +19,8 @@ scene("game", () => {
     const { height: bHeight, width: bWidth } = grid.blockDimensions
 
     const snake = newSnake(grid, vec2(5, 5))
+    snake.grow()
+    snake.move(snake.direction)
 
     let food = newRandomFood(grid, snake)
 
@@ -34,7 +36,16 @@ scene("game", () => {
             food = newRandomFood(grid, snake)
         }
 
+        const headCoords = snake.body[0][1]
 
+        // Check if snake is eating itself
+        for (let i = 1; i < snake.body.length; i++) {
+
+            if (headCoords.eq(snake.body[i][1])) {
+                debug.log("Hay colision")
+            }
+
+        }
 
     }
     )
