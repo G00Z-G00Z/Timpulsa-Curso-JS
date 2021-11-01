@@ -2,6 +2,7 @@ import kaboom from "kaboom";
 import { newGrid } from './gridSystem';
 import { Origin } from 'kaboom';
 import { newSnake } from "./Snake";
+import { newRandomFood } from './randomFood';
 kaboom();
 
 
@@ -25,6 +26,7 @@ scene("game", () => {
         isGrow && snake.grow()
         isGrow = !isGrow
         snake.move(snake.direction)
+        newRandomFood(grid, snake)
     }
     )
 
