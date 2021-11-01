@@ -99,7 +99,6 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
 
 
         },
-
         kill() {
 
             for (let i = 0; i < this.body.length; i++) {

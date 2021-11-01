@@ -7,7 +7,7 @@ export const FoodTags = {
     food: "food"
 }
 
-export function newRandomFood(grid: Grid, snake: Snake): void {
+export function newRandomFood(grid: Grid, snake: Snake): Character<AreaComp & { moveTo(v: Vec2): void }> {
     let foodCoord: Vec2;
     let overlap;
 
@@ -30,6 +30,8 @@ export function newRandomFood(grid: Grid, snake: Snake): void {
         FoodTags.food,
         rect(grid.blockDimensions.width, grid.blockDimensions.height)
     ])
+
+    return food
 
 }
 

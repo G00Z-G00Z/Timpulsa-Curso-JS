@@ -1,8 +1,8 @@
 import kaboom from "kaboom";
 import { newGrid } from './gridSystem';
 import { Origin } from 'kaboom';
-import { newSnake } from "./Snake";
-import { newRandomFood } from './randomFood';
+import { newSnake, SnakeTags } from './Snake';
+import { newRandomFood, FoodTags } from './randomFood';
 kaboom();
 
 
@@ -20,15 +20,25 @@ scene("game", () => {
 
     const snake = newSnake(grid, vec2(5, 5))
 
-    let isGrow = false
+    let food = newRandomFood(grid, snake)
 
-    loop(1, () => {
-        isGrow && snake.grow()
-        isGrow = !isGrow
+    // Updates the game state
+    loop(.2, () => {
         snake.move(snake.direction)
-        newRandomFood(grid, snake)
+
+        // Check if snake is eating food
+
+        if (snake.body[0][0].isTouching(food)) {
+            snake.grow()
+            food.destroy()
+            food = newRandomFood(grid, snake)
+        }
+
+
+
     }
     )
+
 
 
     keyDown("left", () => {
@@ -45,6 +55,14 @@ scene("game", () => {
     })
 
 
+})
+
+
+scene("end", () => {
+    add([
+        text("Muerto"),
+        pos(width() / 2, height() / 2)
+    ])
 })
 
 go("game")
