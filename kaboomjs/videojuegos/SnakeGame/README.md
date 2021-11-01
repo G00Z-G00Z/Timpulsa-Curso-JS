@@ -40,6 +40,7 @@ La posición de una serpiente, puede ser un grid, entonces convendría hacer un 
 
 - El movimiento va a tener que ser con render, para que sea más sencillo
 - Cuando se actualiza el movimiento de la serpiente, tiene que usarse un Vec2.clone(), ya que como es un objeto, se pasa por _referencia_. Entonces se necesita el clone, para que se pase por value
+- Las colisiones son muy precisas. Detectan incluso si están adyacentes. Entonces es mejor hacer un collision detection manual
 
 # Ideas de otros lugares y links
 

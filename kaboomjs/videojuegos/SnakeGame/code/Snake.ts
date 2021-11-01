@@ -45,6 +45,26 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
         },
         move(direction: Direction) {
 
+            // Prevents the snake for going backwards
+            switch (direction) {
+                case "up":
+                    if (this.direction === "down")
+                        direction = "down";
+                    break;
+                case "down":
+                    if (this.direction === "up")
+                        direction = "up";
+                    break;
+                case "left":
+                    if (this.direction === "right")
+                        direction = "right";
+                    break;
+                case "right":
+                    if (this.direction === "left")
+                        direction = "left";
+                    break;
+            }
+
             this.direction = direction
 
             const firstIndex = this.hasGrown ? this.body.length - 2 : this.body.length - 1
@@ -60,7 +80,7 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
             this.hasGrown = false
 
             // Move head
-            switch (direction) {
+            switch (this.direction) {
                 case "up":
                     this.body[0][1].y--
                     break;

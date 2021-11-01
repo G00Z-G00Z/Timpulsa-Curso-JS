@@ -3,6 +3,7 @@ import { newGrid } from './gridSystem';
 import { Origin } from 'kaboom';
 import { newSnake, SnakeTags } from './Snake';
 import { newRandomFood, FoodTags } from './randomFood';
+import { Direction } from './interfaces';
 kaboom();
 
 
@@ -16,17 +17,19 @@ scene("game", () => {
         color(rgb(0, 0, 0))
     ])
 
+    let SNAKE_DIRECTION: Direction = "up"
+
     const { height: bHeight, width: bWidth } = grid.blockDimensions
 
     const snake = newSnake(grid, vec2(5, 5))
     snake.grow()
-    snake.move(snake.direction)
+    snake.move(SNAKE_DIRECTION)
 
     let food = newRandomFood(grid, snake)
 
     // Updates the game state
-    loop(.2, () => {
-        snake.move(snake.direction)
+    loop(.1, () => {
+        snake.move(SNAKE_DIRECTION)
 
         // Check if snake is eating food
 
@@ -42,7 +45,7 @@ scene("game", () => {
         for (let i = 1; i < snake.body.length; i++) {
 
             if (headCoords.eq(snake.body[i][1])) {
-                debug.log("Hay colision")
+                go("gameOver")
             }
 
         }
@@ -53,23 +56,23 @@ scene("game", () => {
 
 
     keyDown("left", () => {
-        snake.direction = "left"
+        SNAKE_DIRECTION = "left"
     })
     keyDown("right", () => {
-        snake.direction = "right"
+        SNAKE_DIRECTION = "right"
     })
     keyDown("down", () => {
-        snake.direction = "down"
+        SNAKE_DIRECTION = "down"
     })
     keyDown("up", () => {
-        snake.direction = "up"
+        SNAKE_DIRECTION = "up"
     })
 
 
 })
 
 
-scene("end", () => {
+scene("gameOver", () => {
     add([
         text("Muerto"),
         pos(width() / 2, height() / 2)
