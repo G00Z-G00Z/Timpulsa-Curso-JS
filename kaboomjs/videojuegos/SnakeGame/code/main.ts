@@ -68,6 +68,7 @@ scene(ScenesId.main, () => {
         for (let i = 1; i < snake.body.length; i++) {
 
             if (headCoords.eq(snake.body[i][1])) {
+                // shake(16)
                 go(ScenesId.end)
             }
 
@@ -100,9 +101,6 @@ scene(ScenesId.main, () => {
 
 scene(ScenesId.end, () => {
 
-
-    const grid = newGrid(vec2(3, 2))
-
     // Layers and background
     getLayers()
     add([
@@ -113,13 +111,15 @@ scene(ScenesId.end, () => {
 
     // Texts
     add([
-        text(`Puntos ${getData(scoreId)}`),
-        pos(grid.getPositionFromCoordinates(vec2(1, 0))),
+        text(`Puntos ${getData(scoreId)}`, {
+            size: 50
+        }),
+        pos(vec2(width() / 2, height() / 2)),
         origin("center"),
         layer(LayersId.ui)
     ])
 
-    addButton("Reintentar ?", grid.getPositionFromCoordinates(vec2(1, 1)), () => { go(ScenesId.main) })
+    addButton("Reintentar ?", vec2(width() / 2, 2 * height() / 3), () => { go(ScenesId.main) })
 })
 
 go("game")

@@ -6,7 +6,7 @@ export function addButton(message: string, position: Vec2, onClickFunction: () =
 
     const btn = add([
         text(message, {
-            size: 16
+            size: 20
         }),
         pos(position),
         area({ cursor: "pointer", }),
