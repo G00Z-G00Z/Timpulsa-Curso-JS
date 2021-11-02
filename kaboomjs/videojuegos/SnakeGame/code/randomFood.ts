@@ -1,9 +1,11 @@
 import { Grid, Snake } from './interfaces';
-import { Vec2, Character, AreaComp } from 'kaboom';
+import { Vec2, Character, AreaComp, Origin } from 'kaboom';
 import { FoodTags } from './tags';
 
 // Function that generates food for the snake, at a random location. It cannot overlap with the snake.
 
+
+declare function origin(o: Origin): void
 
 export function newRandomFood(grid: Grid, snake: Snake): Character<AreaComp & { moveTo(v: Vec2): void }> {
     let foodCoord: Vec2;
@@ -26,7 +28,8 @@ export function newRandomFood(grid: Grid, snake: Snake): Character<AreaComp & { 
         pos(grid.getPositionFromCoordinates(randomPosition(grid))),
         color(rgb(255, 0, 0)),
         FoodTags.food,
-        rect(grid.blockDimensions.width, grid.blockDimensions.height)
+        rect(grid.blockDimensions.width, grid.blockDimensions.height),
+        origin("center")
     ])
 
     return food

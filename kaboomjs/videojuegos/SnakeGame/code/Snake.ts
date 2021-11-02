@@ -1,9 +1,9 @@
 import { FabricaSnake, Grid, Snake, Direction } from './interfaces';
-import { Vec2, Character, AreaComp } from 'kaboom';
+import { Vec2, Character, AreaComp, Origin } from 'kaboom';
 import { SnakeTags } from './tags';
 
 
-
+declare function origin(o: Origin): void
 
 export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
 
@@ -13,7 +13,8 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
         pos(grid.getPositionFromCoordinates(initialCoords)),
         color(rgb(0, 255, 0)),
         outline(1, rgb(0, 0, 0)),
-        SnakeTags.head
+        SnakeTags.head,
+        origin("center")
     ])
 
 
