@@ -68,9 +68,10 @@ scene(ScenesId.main, () => {
         for (let i = 1; i < snake.body.length; i++) {
 
             if (headCoords.eq(snake.body[i][1])) {
-                // shake(16)
+                shake(16)
                 go(ScenesId.end)
             }
+
 
         }
 
