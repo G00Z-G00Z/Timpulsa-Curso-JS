@@ -1,15 +1,16 @@
 import kaboom from "kaboom";
 import { newGrid } from './gridSystem';
 import { Origin } from 'kaboom';
-import { newSnake, SnakeTags } from './Snake';
-import { newRandomFood, FoodTags } from './randomFood';
+import { newSnake } from './Snake';
+import { newRandomFood } from './randomFood';
 import { Direction } from './interfaces';
+import { ScenesId } from './tags';
 kaboom();
 
 
 declare function origin(o: Origin): any
 
-scene("game", () => {
+scene(ScenesId.main, () => {
     const grid = newGrid(vec2(40, 18))
 
     add([
@@ -45,7 +46,7 @@ scene("game", () => {
         for (let i = 1; i < snake.body.length; i++) {
 
             if (headCoords.eq(snake.body[i][1])) {
-                go("gameOver")
+                go(ScenesId.end)
             }
 
         }
@@ -72,7 +73,7 @@ scene("game", () => {
 })
 
 
-scene("gameOver", () => {
+scene(ScenesId.end, () => {
     add([
         text("Muerto"),
         pos(width() / 2, height() / 2)

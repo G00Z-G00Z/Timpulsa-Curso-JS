@@ -1,10 +1,8 @@
 import { FabricaSnake, Grid, Snake, Direction } from './interfaces';
 import { Vec2, Character, AreaComp } from 'kaboom';
+import { SnakeTags } from './tags';
 
-export const SnakeTags = {
-    head: "head",
-    body: "body",
-}
+
 
 
 export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
