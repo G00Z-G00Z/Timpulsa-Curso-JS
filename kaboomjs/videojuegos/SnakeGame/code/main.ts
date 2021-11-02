@@ -6,6 +6,7 @@ import { newRandomFood } from './randomFood';
 import { Direction } from './interfaces';
 import { LayersId, ScenesId, scoreId } from './tags';
 import { getLayers } from './utils';
+import { addButton } from './buttons';
 kaboom();
 
 
@@ -98,10 +99,27 @@ scene(ScenesId.main, () => {
 
 
 scene(ScenesId.end, () => {
+
+
+    const grid = newGrid(vec2(3, 2))
+
+    // Layers and background
+    getLayers()
+    add([
+        rect(width(), height()),
+        color(rgb(0, 0, 0)),
+        layer(LayersId.background)
+    ])
+
+    // Texts
     add([
         text(`Puntos ${getData(scoreId)}`),
-        pos(width() / 2, height() / 2)
+        pos(grid.getPositionFromCoordinates(vec2(1, 0))),
+        origin("center"),
+        layer(LayersId.ui)
     ])
+
+    addButton("Reintentar ?", grid.getPositionFromCoordinates(vec2(1, 1)), () => { go(ScenesId.main) })
 })
 
 go("game")
