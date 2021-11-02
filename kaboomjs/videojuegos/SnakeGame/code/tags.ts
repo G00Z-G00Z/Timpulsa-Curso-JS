@@ -12,3 +12,9 @@ export const ScenesId = {
     main: "game",
     end: "gameOver"
 }
+
+export const LayersId = {
+    background: "background",
+    game: "game",
+    ui: "ui"
+}
