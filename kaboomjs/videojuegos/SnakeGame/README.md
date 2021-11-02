@@ -47,4 +47,4 @@ La posición de una serpiente, puede ser un grid, entonces convendría hacer un 
 - [https://www.edureka.co/blog/snake-game-with-pygame/](https://www.edureka.co/blog/snake-game-with-pygame/)
 - [https://www.youtube.com/watch?v=QTcIXok9wNY](https://www.youtube.com/watch?v=QTcIXok9wNY)
 
-[game_url]: https://replit.com/@EduardoGmez1/SnakeGame2#code/main.js
+[game_url]: https://replit.com/@EduardoGmez1/SnakeGame3#code/main.js
