@@ -36,7 +36,8 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
                 pos(grid.getPositionFromCoordinates(lastPositionCoords)),
                 color(rgb(0, 255, 0)),
                 outline(1, rgb(0, 0, 0)),
-                SnakeTags.body
+                SnakeTags.body,
+                origin("center")
             ])
 
             this.body.push([newBody, lastPositionCoords])

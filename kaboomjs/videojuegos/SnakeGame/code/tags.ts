@@ -18,3 +18,5 @@ export const LayersId = {
     game: "game",
     ui: "ui"
 }
+
+export const scoreId = "score"
