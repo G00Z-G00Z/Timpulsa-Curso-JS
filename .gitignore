@@ -105,3 +105,8 @@ dist
 
 # dummy files for testing 
 *dummy*.js
+
+# All dummy folders
+
+dummy/
+dummy/**
