@@ -57,4 +57,61 @@ console.log(`Tu resultado es de ${operacion(number1, number2)}`);
 
 Como se puede ver, este pequeño programa se puede revolver bastante y es muy complicarlo tenerlo en un solo archivo. Entonces lo que usualmente se hace es separarlo en varios archivos para tener un mejor orden:
 
+**operaciones.js**
+
+```javascript
+export const sumar = (a, b) => a + b;
+export const restar = (a, b) => a - b;
+export const dividir = (a, b) => a / b;
+export const multiplicar = (a, b) => a * b;
+
+// Se usa export, para que otros modulos puedan importar la función
+```
+
+**userInput.js**
+
+```javascript
+// Se usa import, para poder obtener las funciones exportadas de otros modulos
+import { sumar, restar, multiplicar, dividir } from "./operations";
+
+// Ojo, si no pones export, otros modulos no podrán ver el objeto
+const prompt = require("prompt-sync");
+
+export function getNumber(message) {
+	const n = prompt(message);
+	return Number(n);
+}
+
+export function getOperation() {
+	console.log("Que quieres hacer? ");
+	console.log("[1] Sumar ");
+	console.log("[2] Restar ");
+	console.log("[3] Multiplicar ");
+	console.log("[4] Dividir ");
+	const userAns = getNumber("Dame un numero");
+	if (userAns === 1) return sumar;
+	if (userAns === 2) return restar;
+	if (userAns === 3) return multiplicar;
+	if (userAns === 4) return dividir;
+}
+```
+
+**main.js**
+
+```javascript
+import { getNumber, getOperation } from "./userInput";
+
+const number1 = getNumber("Dame un numero");
+const number2 = getNumber("Dame otro numero");
+const operacion = getOperation();
+
+console.log(`Tu resultado es de ${operacion(number1, number2)}`);
+```
+
+Como se puede ver, usar `import` y `export` permite organizar mejor tu código para que sea más fácil de
+entender
+
+> Usualemente por convención, el modulo donde se tiene que iniciar el programa se llama `index.js` o `main.js`.
+> Puedes exportar cualquier tipo de cosas (funciones, variables, etc)
+
 [Go to the top](#Imports_&_Exports)
