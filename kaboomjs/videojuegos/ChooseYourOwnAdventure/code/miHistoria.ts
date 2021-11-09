@@ -1,10 +1,10 @@
 import { newEnding, newEscena, newHistoria, newOpcion } from './factories';
 import { Historia } from './interfaces';
 
-
+// Referencia de historia muestra
 // https://www.fantasy-magazine.com/fm/fiction/choose-your-own-adventure/
 
-
+// Objeto de historia 
 export const miHistoria: Historia = newHistoria("1")
 
 miHistoria.addScene(

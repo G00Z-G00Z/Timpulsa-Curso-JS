@@ -3,12 +3,13 @@ import { miHistoria } from './miHistoria';
 import { Escena } from './interfaces';
 import { setUpSceneWithGrid } from "./setUpScenes";
 import { addBackground, getLayers, textConfigs, scenesId } from './stylesAndConfigs';
-import { addClickableText } from "./clickableText";
+import { addClickableText } from "./ClickableText";
 
 
 
 kaboom();
 
+// Definición de una escena
 scene(scenesId.escena, (escena: Escena, previousScene: string) => {
 
 
@@ -18,6 +19,8 @@ scene(scenesId.escena, (escena: Escena, previousScene: string) => {
     setUpSceneWithGrid(escena)
 
 })
+
+// Definición de la pantalla final de un ending
 scene(scenesId.final, (escena: Escena, previousScene: string) => {
 
 
@@ -37,5 +40,6 @@ scene(scenesId.final, (escena: Escena, previousScene: string) => {
 
 })
 
+// Inicialización del videojuego
 go("escena", miHistoria.getScene(miHistoria.startingSceneId))
 

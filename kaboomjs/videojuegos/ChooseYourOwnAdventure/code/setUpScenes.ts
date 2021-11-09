@@ -18,6 +18,7 @@ declare function origin(pos: Origin): void
     Donde la x, es el mensaje de la escena
     Y las letras son las opciones
   
+    Usando el grid, se puede poner en cualquiera de estas posiciones
  * @param escena Escena
  */
 export function setUpSceneWithGrid(
@@ -25,22 +26,22 @@ export function setUpSceneWithGrid(
 ): void {
 
     const rows = 4
-    const cols = 5
+        , cols = 5
 
-    const grid = vec2(rows, cols)
-
-    const putInGrid = getGridPositionFunction<Character<AreaComp & ScaleComp>>(grid)
-
+    // Put In Grid function, is a function that puts something in a grid
+    const grid = vec2(rows, cols), putInGrid = getGridPositionFunction<Character<AreaComp & ScaleComp>>(grid)
 
 
+    // Prompt text
     putInGrid(vec2(2, 0), [
         text(escena.mensaje, textConfigs.prompt)
     ], "top")
 
 
+    // Counter para pasar por todas las opciones
     let counter = 0
 
-
+    // Este loop pasa por todas las opciones, y las pone en las coordenadas específicas en la documentación de la función
     for (let j = cols - 2; j < cols; j++) {
         for (let i = 1; i < rows; i += 2) {
 
@@ -55,6 +56,13 @@ export function setUpSceneWithGrid(
             const nextScene = miHistoria.getScene(siguienteEscenaId)
             const siguienteEscena = nextScene?.esFinal ? scenesId.final : scenesId.escena
 
+            /**
+             * Acciones del boton
+             * 
+             * Estas incluyen: 
+             *  - Ir a la siguiente escena si se le pica al boton
+             *  - Crecer si se hace un hover en el boton
+             */
             const boton = putInGrid(vec2(i, j), [
                 text(texto, textConfigs.option),
                 area({ cursor: "pointer" })
