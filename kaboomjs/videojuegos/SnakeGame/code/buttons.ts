@@ -2,6 +2,12 @@ import { Vec2, Origin } from 'kaboom';
 
 declare function origin(o: Origin): any
 
+/**
+ * Makes a clickable text that triggers an action
+ * @param message string
+ * @param position Vec2
+ * @param onClickFunction () => void
+ */
 export function addButton(message: string, position: Vec2, onClickFunction: () => void) {
 
     const btn = add([

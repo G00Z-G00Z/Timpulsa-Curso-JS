@@ -1,6 +1,11 @@
 import { Character, Vec2, AreaComp } from 'kaboom';
 
 /**
+ * Kaboom element, that has the function "moveTo"
+ */
+export type GameMovableElement = Character<AreaComp & { moveTo(v: Vec2): void }>
+
+/**
  * In game grid. Lets you determine the position of a cell in the grid.
  */
 export interface Grid {
@@ -31,6 +36,9 @@ export interface Grid {
  */
 export type Direction = 'up' | 'down' | 'left' | 'right';
 
+/**
+ * Definición de una serpiente. 
+ */
 export interface Snake {
     /**
      * Direction where snake is moving

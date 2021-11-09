@@ -1,29 +1,35 @@
-import { Grid, Snake } from './interfaces';
+import { GameMovableElement, Grid, Snake } from './interfaces';
 import { Vec2, Character, AreaComp, Origin } from 'kaboom';
 import { FoodTags } from './tags';
-
-// Function that generates food for the snake, at a random location. It cannot overlap with the snake.
 
 
 declare function origin(o: Origin): void
 
-export function newRandomFood(grid: Grid, snake: Snake): Character<AreaComp & { moveTo(v: Vec2): void }> {
-    let foodCoord: Vec2;
-    let overlap;
+/**
+ * 
+ * @param grid Grid
+ * @param snake Snake
+ * @returns Food
+ */
+export function newRandomFood(grid: Grid, snake: Snake): GameMovableElement {
 
+    let foodCoord: Vec2
+        , isOverlap: boolean;
+
+    // Loop que pone la comida en una posición aleatoria, sin chocar con la serpiente
     do {
         foodCoord = randomPosition(grid);
-        overlap = false
+        isOverlap = false
 
         for (let i = 0; i < snake.body.length; i++) {
             if (snake.body[i][1].eq(foodCoord)) {
-                overlap = true
+                isOverlap = true
                 break
             }
         }
-    } while (overlap)
+    } while (isOverlap)
 
-    const food: Character<AreaComp & { moveTo(v: Vec2): void }> = add([
+    const food: GameMovableElement = add([
         area(),
         pos(grid.getPositionFromCoordinates(randomPosition(grid))),
         color(rgb(255, 0, 0)),
@@ -37,9 +43,13 @@ export function newRandomFood(grid: Grid, snake: Snake): Character<AreaComp & { 
 }
 
 
-// Generate a random positino in a grid 
+/**
+ * Generates a Random Position in a grid
+ * @param grid Grid
+ * @returns Vec2
+ */
 function randomPosition(grid: Grid): Vec2 {
-    let x = Math.floor(Math.random() * grid.maxColumns);
-    let y = Math.floor(Math.random() * grid.maxRows);
+    const x = Math.floor(Math.random() * grid.maxColumns)
+        , y = Math.floor(Math.random() * grid.maxRows);
     return vec2(x, y);
 }

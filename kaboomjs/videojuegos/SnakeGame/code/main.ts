@@ -38,18 +38,18 @@ scene(ScenesId.main, () => {
 
 
 
-    // Snake Variables 
+    // Snake Variables to manage snake actions
     let SNAKE_DIRECTION: Direction = "up"
 
     const snake = newSnake(grid, vec2(5, 5))
-    snake.grow()
-    snake.move(SNAKE_DIRECTION)
+    snake.grow() // Initial grow
+    snake.move(SNAKE_DIRECTION) // Initial Movement
 
     // Food
     let food = newRandomFood(grid, snake)
 
 
-    // Updates the game state
+    // Updates the game state (Game Loop)
     loop(.1, () => {
         snake.move(SNAKE_DIRECTION)
 
@@ -69,10 +69,9 @@ scene(ScenesId.main, () => {
 
             if (headCoords.eq(snake.body[i][1])) {
                 shake(16)
+                snake.kill()
                 go(ScenesId.end)
             }
-
-
         }
 
         // Updates score

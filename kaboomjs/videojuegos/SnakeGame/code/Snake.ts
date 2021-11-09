@@ -1,13 +1,20 @@
-import { FabricaSnake, Grid, Snake, Direction } from './interfaces';
-import { Vec2, Character, AreaComp, Origin } from 'kaboom';
+import { FabricaSnake, Grid, Snake, Direction, GameMovableElement } from './interfaces';
+import { Vec2, Origin } from 'kaboom';
 import { SnakeTags } from './tags';
 
 
 declare function origin(o: Origin): void
 
+/**
+ * Crea una serpiente, que no se sale del grid determinado
+ * @param grid Grid
+ * @param initialCoords Vec2
+ * @returns Snake
+ */
 export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
 
-    const head: Character<AreaComp & { moveTo(v: Vec2): void }> = add([
+    // Esta es la cabeza, tiene el tag de la cabeza de la serpiente
+    const head: GameMovableElement = add([
         rect(grid.blockDimensions.width, grid.blockDimensions.height),
         area(),
         pos(grid.getPositionFromCoordinates(initialCoords)),
@@ -21,16 +28,23 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
     const snake: Snake = {
         direction: 'up',
         hasGrown: false,
+        /**
+         * El cuerpo de la serpiente es un arreglo de arreglos. 
+         * [SnakeBodyPart, Coords]
+         * 
+         * Las coordenadas son un Vec2
+         */
         body: [
             [head, initialCoords]
         ],
         grow() {
 
+            // Con esto, se logra que cuando crezca la serpiente, no detecte que se está comiendo a sí misma
             this.hasGrown = true;
 
             const lastPositionCoords = this.body[this.body.length - 1][1]
 
-            const newBody: Character<AreaComp & { moveTo(v: Vec2): void }> = add([
+            const newBody: GameMovableElement = add([
                 rect(grid.blockDimensions.width, grid.blockDimensions.height),
                 area(),
                 pos(grid.getPositionFromCoordinates(lastPositionCoords)),
@@ -67,6 +81,13 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
 
             this.direction = direction
 
+            /**
+             * Este indice indica desde donde crece la serpiente. 
+             * 
+             * Si está creciendo (hasGrown == true), la última coordenada no se debe de mover (porque en ese momento, la última y penúltima posición estarían en la misma posición)
+             * 
+             * Una vez que ya deje de crecer, la serpiente empieza desde hasta atrás a crecer
+             */
             const firstIndex = this.hasGrown ? this.body.length - 2 : this.body.length - 1
 
             // Goes backwards in the snake's body and updates position
@@ -77,6 +98,7 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
 
             }
 
+            // Le dice a la serpiente que ya deje de crecer
             this.hasGrown = false
 
             // Move head
@@ -119,6 +141,9 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
 
 
         },
+        /**
+         * Destruye la serpiente, y todo su cuerpo
+         */
         kill() {
 
             for (let i = 0; i < this.body.length; i++) {

@@ -1,3 +1,7 @@
+/**
+ * Estos son los diferentes tags que se usarán en el juego 
+ */
+
 export const SnakeTags = {
     head: "head",
     body: "body",
