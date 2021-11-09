@@ -7,7 +7,11 @@ Para ver el temario del curso [Temario del curso](Temario.md)
 
 ## **¿Cómo desarrollar?**
 
-### Para VsCode
+### Para Replit
+
+En Replit, viene la opción de empezar un proyecto con Kaboom (Elegir la opción de beta)
+
+### Para VsCode (No recomendado para este curso)
 
 Necesitas hacer una carpeta con la siguiente estructura:
 
@@ -36,10 +40,7 @@ En `index.js`
 kaboom();
 
 // add a text of size 32 at position (100, 100)
-add([
-    text("oh hi", 32),
-    pos(100, 100),
-]);
+add([text("oh hi", 32), pos(100, 100)]);
 ```
 
 En el `index.html`
@@ -47,12 +48,8 @@ En el `index.html`
 ```html
 ...
 <script src="https://unpkg.com/kaboom@next/dist/kaboom.js"></script>
-<script src="./index.js" type="module" ></script>
+<script src="./index.js" type="module"></script>
 ...
 ```
 
 ---
-
-### Para Replit
-
-En Replit, viene la opción de empezar un proyecto con Kaboom (Elegir la opción de beta) 
