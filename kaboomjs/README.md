@@ -55,4 +55,4 @@ En el `index.html`
 
 ### Para Replit
 
-En Replit, viene la opción de empezar un proyecto con Kaboom (Elegir la opción de beta)
+En Replit, viene la opción de empezar un proyecto con Kaboom (Elegir la opción de beta) 

@@ -1,10 +1,10 @@
-# Timpulsa-Curso-JS
+# Curso de Javascript para el desarrollo de videojuegos
 
 *Repositorio con las clases y los ejercicios del curso de JS*
 
 # 👩‍🏫Propósito👨‍🏫
 
-El propósito de este curso, es enseñar a alumnos de la **Secundaria #2 Jesús M. Montemayor**, los fundamentos de `javascript` y el desarrollo de videojuegos con la librería de **kaboomjs**.
+El propósito de este curso es enseñar, los fundamentos de `javascript` y el desarrollo de videojuegos con la librería de **kaboomjs**. Se usará como un repositorio donde pondremos ejercicios y explicaciones de los temas. 
 
 # 🤓¿Cómo colaborar? 🤓
 
