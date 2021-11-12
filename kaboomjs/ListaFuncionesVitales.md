@@ -1,66 +1,73 @@
-# Game object
+# Lista de temas importantes
 
-- add
-- destroy
-- pos
+Estos son los temas importantes que tenemos que introducir antes de hacer videojuegos muy grandes. Aqui podemos marcar si ya acabamos o no.
 
-# Components
+Aqui será una lista de los temas que se van a abarcar, entonces si en un futuro aparecen más funciones, aqui las anotamos.
 
-- scale
-- rotate
-- color
-- text
-- rect
-- circle
-- area
-- origin
-- layer
-- sprite
-- body
-- solid
-- health() ?
+## Game object
 
-# Events
+- [ ] add
+- [ ] destroy
+- [ ] pos
 
-- onCollide
-- onClick
-- onHover
-- onKeyDown
-- onKeyPress
+## Components
 
-# Assets
+- [ ] scale
+- [ ] rotate
+- [ ] color
+- [ ] text
+- [ ] origin
+- [ ] rect
+- [ ] circle
+- [ ] area
+- [ ] origin
+- [ ] layer
+- [ ] sprite
+- [ ] body
+- [ ] solid
+- [ ] health() ?
 
-- load (para imagenes, sonidos, etc)
+## Events
+
+- [ ] onCollide
+- [ ] onClick
+- [ ] onHover
+- [ ] onKeyDown
+- [ ] onKeyPress
+
+## Assets
+
+- [ ] load (para imagenes, sonidos, etc)
 
 # Info
 
-- width()
-- height()
+- [ ] width()
+- [ ] height()
 
 # Timer
 
-- loop
+- [ ] loop
 
 # Math
 
-- rand()
-- vec2()
-- rgb()
+- [ ] rand()
+- [ ] vec2()
+- [ ] rgb()
 
 # Scenes
 
-- scene()
-- go()
+- [ ] scene()
+- [ ] go()
 
 # Level
 
-- addLevel
+- [ ] addLevel
 
 # Local storage
 
-- getData
-- setData
+- [ ] getData
+- [ ] setData
 
 # Debug
 
-- debug.log
+- [ ] debug.log
