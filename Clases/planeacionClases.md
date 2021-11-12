@@ -8,22 +8,22 @@ Aqui se van a poner los temas y como se pueden dividir las clases y dinámicas
 
 Se va a dividir en **3** partes:
 
-- Intro a javascript (4 clases)
-- Intro a kaboom (2 clases)
+- Intro a `javascript` (4 clases)
+- Intro a `kaboom` (2 clases)
 - Desarrollo con Kboom (6 clases)
 
-A continuación se muestran los contenidos de las clases. En el [indice][indice_temas] se encuentran a detalle los temas.
+## Intro a `Javascript`
 
-## Intro a Javascript
+A continuación, se muestran los temas de `javascript`. En el [indice de `javascript`][indice_js] se encuentran a detalle los temas.
 
 ### Introducción
 
 1. Que es un lenguaje de programación
-2. Que es Javascript
-3. Diferencias entre javascript y `scratch`
+2. Que es `Javascript`
+3. Diferencias entre `javascript` y `scratch`
 4. Ambiente de desarrollo
 
-### Familiarizarnos con javascript
+### Familiarizarnos con `javascript`
 
 1. Primitivos y variables
 1. console
@@ -44,6 +44,11 @@ A continuación se muestran los contenidos de las clases. En el [indice][indice_
 1. Objetos
 1. Imports & Exports
 
+## Intro a `kaboomjs`
+
+A continuación, se muestran los temas de las clases de Intro a `Kaboomjs`. _Ojo_, no se entrará tanto a fondo, porque en teoría, la enseñanza de los videojuegos va a ser lo que les enseñe a usar `kaboom`, pero esto es para que no entren en ceros. Comoquiera, se todos los temas se encuentran el [indice de kaboom][indice_kaboom]
+
 <!-- Definiciones para paths -->
 
-[indice_temas]: ..\TemarioJs\indice.md
+[indice_js]: ..\TemarioJs\indice.md
+[indice_kaboom]: ..\kaboomjs\indice.md
