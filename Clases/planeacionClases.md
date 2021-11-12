@@ -1,3 +1,5 @@
+[Ir a página principal][pagina_principal]
+
 # Planeación de las clases
 
 Aqui se van a poner los temas y como se pueden dividir las clases y dinámicas
@@ -52,3 +54,4 @@ A continuación, se muestran los temas de las clases de Intro a `Kaboomjs`. _Ojo
 
 [indice_js]: ..\TemarioJs\indice.md
 [indice_kaboom]: ..\kaboomjs\indice.md
+[pagina_principal]: ../README.md

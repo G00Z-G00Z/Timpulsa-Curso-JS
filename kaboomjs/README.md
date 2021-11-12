@@ -1,3 +1,5 @@
+[Ir a página principal][pagina_principal]
+
 # 💥Kaboom JS 💥
 
 Para enseñar el desarrollo de videojuegos en Js, usaremos la librería de **kaboom js**. Esta es una librería para principiantes para hacer videojuegos en js. Es ligera y sencilla.
@@ -52,4 +54,4 @@ En el `index.html`
 ...
 ```
 
----
+[pagina_principal]: ../README.md
