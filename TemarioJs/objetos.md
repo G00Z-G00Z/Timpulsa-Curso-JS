@@ -60,9 +60,37 @@ console.log(persona.telefono); // Ojo que no se ha declarado el telefono de una 
 
 > Cuando se accede un atributo que no ha sido declarado, siempre regresa `undefined` por lo que es muy sencillo saber si un objeto tiene o no un atributo.
 
-# Funciones en objetos
+# Asignación de atributos a variables
 
-Como se había mencionado antes, los objetos pueden guardar cualquier tipo de cosas como atributos, inclusive _funciones_:
+En muchas ocasiones, se necesitan usar los atributos de un objeto. Sin embargo, a veces es muy largo escribir el nombre del objeto y su atributo, porque puede tener muchas capas.
+
+```javascript
+
+// Forma normal
+const alumno = {
+	nombre : "Carlos", 
+	edad : 10
+}
+
+console.log(`El nombre del alumno es ${alumno.nombre} y su edad es de ${alumno.edad}`)
+
+// Destructuración
+
+const {nombre, edad} = alumno
+
+console.log(`El nombre del alumno es ${nombre} y su edad es de ${edad}`)
+
+/**
+Output: 
+	El nombre del alumno es Carlos y su edad es de 10
+	El nombre del alumno es Carlos y su edad es de 10
+*/
+
+```
+
+# Funciones como atributos
+
+Como se había mencionado antes, los objetos pueden guardar cualquier tipo de cosas como atributos, inclusive _funciones_:
 
 ```javascript
 const persona = {
@@ -223,6 +251,95 @@ console.log(miPersona);
 			nombre: "Lea", 
 			tipo : "Perro"
 		}
+	}
+
+*/
+```
+
+### Copiar objetos
+
+Puede que en algun punto, no necesites pasar el objeto por referencia, si no que solamente necesitas el valor de sus atributos. Puede que de primera instancia, se intente algo así: 
+
+```javascript
+const miPersona = {
+	nombre: "Eduardo",
+	edad: 21,
+};
+
+const copiaPersona = miPersona
+copiaPersona.nombre = "Karen"
+copiarPersona.edad = 22
+
+
+console.log(copiarPersona);
+console.log(miPersona);
+/*
+	{
+		nombre : "Karen", 
+		edad : 22
+	}
+	{
+		nombre : "Karen", 
+		edad : 22
+	}
+
+*/
+```
+
+Como se puede ver, se copio el objeto como *referencia*, entonces, todos lo cambios que se hicieron en `copiarPersona` se reflejaron en la variable orginal. 
+
+Para poder hacer una copia de los atributos con sus valores, se puede hacer de dos maneras:
+
+**Manera antigua**
+```javascript
+const miPersona = {
+	nombre: "Eduardo",
+	edad: 21,
+};
+
+const copiaPersona = {}
+copiaPersona.nombre = miPersona.nombre
+copiarPersona.edad = miPersona.edad
+
+copiarPersona.nombre = "Eduardo"
+
+
+console.log(copiarPersona);
+console.log(miPersona);
+/*
+	{
+		nombre : "Karen", 
+		edad : 22
+	}
+	{
+		nombre : "Eduardo", 
+		edad : 22
+	}
+
+*/
+```
+
+**Manera moderna con el operador spread**
+
+```javascript
+const miPersona = {
+	nombre: "Eduardo",
+	edad: 21,
+};
+
+const copiaPersona = {...miPersona, nombre : "Eduardo"} // Esto hace una copia de todos atributos, y lo que sigue sobreescribe los valores
+
+
+console.log(copiarPersona);
+console.log(miPersona);
+/*
+	{
+		nombre : "Karen", 
+		edad : 22
+	}
+	{
+		nombre : "Eduardo", 
+		edad : 22
 	}
 
 */
