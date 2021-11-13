@@ -4,36 +4,40 @@ Estos son los temas importantes que tenemos que introducir antes de hacer videoj
 
 Aqui será una lista de los temas que se van a abarcar, entonces si en un futuro aparecen más funciones, aqui las anotamos.
 
+Los que están marcados , son los que sí se verán en clase.
+
 ## Game object
 
-- [ ] add
-- [ ] destroy
-- [ ] pos
+- [x] add
+- [x] destroy
+- [x] pos
 
 ## Components
 
 - [ ] scale
 - [ ] rotate
-- [ ] color
-- [ ] text
-- [ ] origin
-- [ ] rect
-- [ ] circle
-- [ ] area
-- [ ] origin
+- [x] color
+- [x] text
+- [x] origin
+- [x] rect
+- [x] circle
+- [x] area
+- [x] origin
 - [ ] layer
-- [ ] sprite
-- [ ] body
+- [x] sprite
+- [x] body
 - [ ] solid
 - [ ] health() ?
+- [x] moveTo
+- [x] move
 
 ## Events
 
-- [ ] onCollide
-- [ ] onClick
-- [ ] onHover
-- [ ] onKeyDown
-- [ ] onKeyPress
+- [x] onCollide
+- [x] onClick
+- [x] onHover
+- [x] onKeyDown
+- [x] onKeyPress
 
 ## Assets
 
@@ -41,27 +45,27 @@ Aqui será una lista de los temas que se van a abarcar, entonces si en un futuro
 
 # Info
 
-- [ ] width()
-- [ ] height()
+- [x] width()
+- [x] height()
 
 # Timer
 
-- [ ] loop
+- [x] loop
 
 # Math
 
 - [ ] rand()
-- [ ] vec2()
-- [ ] rgb()
+- [x] vec2()
+- [x] rgb()
 
 # Scenes
 
-- [ ] scene()
-- [ ] go()
+- [x] scene()
+- [x] go()
 
 # Level
 
-- [ ] addLevel
+- [x] addLevel
 
 # Local storage
 
@@ -70,4 +74,4 @@ Aqui será una lista de los temas que se van a abarcar, entonces si en un futuro
 
 # Debug
 
-- [ ] debug.log
+- [x] debug.log
