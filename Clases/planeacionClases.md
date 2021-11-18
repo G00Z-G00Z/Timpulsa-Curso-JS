@@ -36,8 +36,8 @@ A continuación, se muestran los temas de `javascript`. En el [indice de `javasc
 
 ### Funciones y ciclos
 
-1. Funciones
 1. Loops
+1. Funciones
 1. Arreglos
 1. Strings in depth
 
