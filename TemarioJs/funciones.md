@@ -64,7 +64,6 @@ En `javascript` puedes la función de dos maneras:
 
 ```javascript
 function nombreDeFuncion(argumento1, argumento2...) {
-
     return output1, output2 ...
 }
 ```
@@ -126,50 +125,46 @@ const saludarPersona = (nombre) => {
 
 ## Notas en argumentos de la función
 
-En `javascript` se puede pasar todo como un *argumento* de una función. Incluso, se pueden pasar **otras funciones**
-
+En `javascript` se puede pasar todo como un _argumento_ de una función. Incluso, se pueden pasar **otras funciones**
 
 ```javascript
-function sayHiBeforeFunction(f){
-	console.log("Hola, voy a llamar una funcion ahora")
-	f() // Aqui se esta llamando la funcion
-	console.log("Termine de realizar la funcion")
+function sayHiBeforeFunction(f) {
+	console.log("Hola, voy a llamar una funcion ahora");
+	f(); // Aqui se esta llamando la funcion
+	console.log("Termine de realizar la funcion");
 }
 
-function sayMyMagicNumber(){
-	console.log("Mi numero mágico es el 4)
+function sayMyMagicNumber() {
+	console.log("Mi numero mágico es el 4");
 }
 
-sayHiBeforeFunction(sayMyMagicNumber) // Ojo, no se deben poner los parentesis de la funcion, porque estas pasando la funcion en si, no lo que regresa
+sayHiBeforeFunction(sayMyMagicNumber); // Ojo, no se deben poner los parentesis de la funcion, porque estas pasando la funcion en si, no lo que regresa
 
 /*
-Output: 
+Output:
 	Hola, voy a llamar una funcion ahora
 	Mi número mágico es el 4
 	Termine de realizar la funcion
 
 */
-
 ```
 
-Adicionalmente, se pueden hacer **funciones que regresen funciones** 
+Adicionalmente, se pueden hacer **funciones que regresen funciones**
 
 ```javascript
-
 function makeASayNameFunction(nombre) {
-
 	function sayName() {
-		console.log(`El nombre secreto es ${nombre}`)
+		console.log(`El nombre secreto es ${nombre}`);
 	}
 
-	return sayName // No se escribe con parentesis
+	return sayName; // No se escribe con parentesis
 }
 
-const sayMariana = makeASayNameFunction("Mariana")
-const sayEduardo = makeASayNameFunction("Eduardo")
+const sayMariana = makeASayNameFunction("Mariana");
+const sayEduardo = makeASayNameFunction("Eduardo");
 
-sayMariana()
-sayEduardo()
+sayMariana();
+sayEduardo();
 
 /*
 Output: 
@@ -177,7 +172,6 @@ Output:
 	El nombre secreto es Eduardo
 
 */
-
 ```
 
 ## Ejercicios y solución
