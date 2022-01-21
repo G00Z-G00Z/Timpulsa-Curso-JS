@@ -7,9 +7,11 @@ Para poder añadir un videojuego, solamente necesitas poner lo necesario y poner
 - [Snake game][snake_game]
 - [Choose your own adventure][choose]
 - [Cookie clicker][cookie]
+- [Doodle Jump][doodle]
 
 <!-- Aqui pones los links a los README.md de los videojuegos -->
 
 [snake_game]: ./SnakeGame/README.md
 [choose]: ./ChooseYourOwnAdventure/README.md
 [cookie]: ./Cookie/README.md
+[doodle]: ./Doodle/README.md
