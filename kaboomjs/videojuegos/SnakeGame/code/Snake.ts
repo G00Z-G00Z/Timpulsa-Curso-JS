@@ -145,6 +145,18 @@ export const newSnake: FabricaSnake = (grid: Grid, initialCoords: Vec2) => {
 
       this.body = [];
     },
+
+    isEatingItself() {
+      const headCoords = this.body[0][1];
+
+      for (let i = 1; i < this.body.length; i++)
+        if (headCoords.eq(this.body[i][1])) return true;
+
+      return false;
+    },
+    getSnakeHead() {
+      return this.body[0][0];
+    },
   };
 
   return snake;
