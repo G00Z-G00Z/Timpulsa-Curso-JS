@@ -1,3 +1,0 @@
-## Pendiente...
-
-No me gusta nada
