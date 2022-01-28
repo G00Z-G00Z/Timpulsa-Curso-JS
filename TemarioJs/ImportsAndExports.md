@@ -21,7 +21,7 @@ Separar archivos, permite tener una mejor organización de tu código, y que el 
 const sumar = (a, b) => a + b;
 const restar = (a, b) => a - b;
 const dividir = (a, b) => a / b;
-const multiplicar = (a, b) => a + b;
+const multiplicar = (a, b) => a * b;
 
 // Funciones para el prompt
 const prompt = require("prompt-sync")();

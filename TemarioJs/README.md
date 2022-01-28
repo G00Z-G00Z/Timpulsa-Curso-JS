@@ -19,5 +19,8 @@ Los temas deben de presentar:
 - Recursos adicionales o documentación de donde pueden encontrar información
 - Referencias de donde se obtuvo la información
 - _Opcional_ Links de imagenes que se puedan usar
+<<<<<<< HEAD
 
 [pagina_principal]: ../README.md
+=======
+>>>>>>> main

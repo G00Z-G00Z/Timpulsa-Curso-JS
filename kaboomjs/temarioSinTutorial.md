@@ -1,21 +1,3 @@
-# Table of contents
-
-- [Table of contents](#table-of-contents)
-- [Temario de kaboom](#temario-de-kaboom)
-  - [Inicialización](#inicialización)
-  - [Loading assets](#loading-assets)
-  - [Object related concepts](#object-related-concepts)
-  - [Components](#components)
-  - [Events](#events)
-  - [inputs](#inputs)
-  - [Timer](#timer)
-  - [Audio](#audio)
-  - [Math](#math)
-  - [Level](#level)
-  - [Storage](#storage)
-  - [Scene](#scene)
-  - [Debug](#debug)
-
 # Temario de kaboom
 
 Esta es la lista de conceptos y de funciones importantes en Kaboom js

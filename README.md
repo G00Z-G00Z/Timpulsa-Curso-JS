@@ -2,22 +2,20 @@
 
 _Repositorio con las clases y los ejercicios del curso de JS_
 
+# Contenido del curso
+
+- [Temario de Javascript][link_temario_js]
+- [Temario de Kaboomjs][link_temario_kaboom]
+- [Videojuegos][link_videojuegos]
+
 # 👩‍🏫Propósito👨‍🏫
 
-El propósito de este curso es enseñar, los fundamentos de `javascript` y el desarrollo de videojuegos con la librería de `kaboomjs`. Se usará como un repositorio donde pondremos ejercicios y explicaciones de los temas.
+El propósito de este curso es enseñar, los fundamentos de `javascript` y el desarrollo de videojuegos con la librería de **kaboomjs**. Se usará como un repositorio donde pondremos ejercicios y explicaciones de los temas.
 
 # 🤓¿Cómo colaborar? 🤓
 
 Para colaborar, hacer un fork de la rama principal, y hacer pull request para subir los cambios.
 
-# Guía por el repositorio
-
-Este repositorio, sirve para organizar los temas del curso. Para explorar el curso, puedes ir a las siguientes secciones:
-
-- [Temas JS][temario_js]
-- [Temas Kaboom][temario_kaboom]
-- [Planeacion de clases][planeacion_clases]
-
-[temario_js]: TemarioJs/README.md
-[temario_kaboom]: kaboomjs/README.md
-[planeacion_clases]: Clases/planeacionClases.md
+[link_temario_js]: ./TemarioJs/README.md
+[link_temario_kaboom]: ./kaboomjs/README.md
+[link_videojuegos]: ./kaboomjs/videojuegos/README.md
