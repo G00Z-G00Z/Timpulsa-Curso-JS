@@ -96,12 +96,13 @@ Si están marcados con [x], significa que ya están listos para el desarrollo
 
 - [x] Choose Your Own Adventure
 - [x] Snake Game
-- [ ] Cookie Clicker
-- [ ] Doodle Jump
+- [x] Cookie Clicker
+- [x] Doodle Jump
+- [x] Flappy Bird
 - [ ] Platformer
 
 <!-- Definiciones para paths -->
 
-[indice_js]: ..\TemarioJs\indice.md
-[indice_kaboom]: ..\kaboomjs\indice.md
+[indice_js]: ../TemarioJs/indice.md
+[indice_kaboom]: ../kaboomjs/indice.md
 [pagina_principal]: ../README.md
