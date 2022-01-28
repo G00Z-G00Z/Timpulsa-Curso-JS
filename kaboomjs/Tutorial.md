@@ -1,5 +1,7 @@
 # Temario de kaboom según el tutorial
 
+> Se recomienda ampliamente visitar el [tutorial][webpage], ya que está mucho mejor explicado.
+
 En [el tutorial de kaboomjs][webpage] aparece un tutorial muy importante con las siguientes funciones importantes:
 
 - `kaboom()` : inicializa el contexto de kaboom
@@ -56,8 +58,6 @@ go("game");
 ```
 
 Adicionalmente, hay un [video][flappy_bird] de como hacer [Flappy Bird][flappy_bird] en kaboom, que entra muy en fondo de como se crea un videojuego en `kaboomjs`
-
-> Se recomienda ampliamente visitar el tutorial, ya que está mucho mejor explicado.
 
 [webpage]: https://kaboomjs.com/doc/intro
 [flappy_bird]: https://www.youtube.com/watch?v=hgReGsh5xVU

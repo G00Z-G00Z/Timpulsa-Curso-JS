@@ -4,14 +4,16 @@
 
 Para enseñar el desarrollo de videojuegos en Js, usaremos la librería de **kaboom js**. Esta es una librería para principiantes para hacer videojuegos en js. Es ligera y sencilla.
 
-Para más información, [documentación de Kaboom js](https://kaboomjs.com)
-Para ver el temario del curso [Temario del curso](Temario.md)
+- Para más información, [documentación de Kaboom js][kaboom.com]
+- Para ver el temario del curso [Temario del curso](Temario.md)
+
+> Se recomienda ampliamente hacer el [tutorial en kaboomjs.com][tutorial_kaboom] en vez de leer el temario. Ya que este entra en detalle y tiene un ejemplo mucho más completo. Sin embargo, se hizo [un resumen](Tutorial.md) en este repositorio como apoyo.
 
 ## **¿Cómo desarrollar?**
 
 ### Para Replit
 
-En Replit, viene la opción de empezar un proyecto con Kaboom (Elegir la opción de beta)
+En [replit](https://replit.com/), viene la opción de empezar un proyecto con `kaboomjs`. Esta es **la mejor opción** para este curso, ya que es un IDE online y gratis. Adicionalmente, como ya viene todo configurado, no se necesita hacer configuraciones extras.
 
 ### Para VsCode (No recomendado para este curso)
 
@@ -55,3 +57,5 @@ En el `index.html`
 ```
 
 [pagina_principal]: ../README.md
+[kaboom.com]: kaboomjs.com
+[tutorial_kaboom]: https://kaboomjs.com/doc/intro
