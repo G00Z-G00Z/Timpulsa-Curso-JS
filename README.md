@@ -7,6 +7,7 @@ _Repositorio con las clases y los ejercicios del curso de JS_
 - [Temario de Javascript][link_temario_js]
 - [Temario de Kaboomjs][link_temario_kaboom]
 - [Videojuegos][link_videojuegos]
+- [Planeación de clases][link_planeacion_clases]
 
 # 👩‍🏫Propósito👨‍🏫
 
@@ -19,3 +20,4 @@ Para colaborar, hacer un fork de la rama principal, y hacer pull request para su
 [link_temario_js]: ./TemarioJs/README.md
 [link_temario_kaboom]: ./kaboomjs/README.md
 [link_videojuegos]: ./kaboomjs/videojuegos/README.md
+[link_planeacion_clases]: ./Clases/README.md

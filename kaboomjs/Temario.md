@@ -1,3 +1,5 @@
+[Ir a página principal](../README.md)
+
 # Table of contents
 
 - [Table of contents](#table-of-contents)

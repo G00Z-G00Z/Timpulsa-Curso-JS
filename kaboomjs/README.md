@@ -57,5 +57,5 @@ En el `index.html`
 ```
 
 [pagina_principal]: ../README.md
-[kaboom.com]: kaboomjs.com
+[kaboom.com]: https://kaboomjs.com/
 [tutorial_kaboom]: https://kaboomjs.com/doc/intro

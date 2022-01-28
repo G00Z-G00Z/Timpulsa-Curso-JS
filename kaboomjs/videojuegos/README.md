@@ -1,3 +1,5 @@
+[Ir a la página principal](../../README.md)
+
 # Videojuegos
 
 Para poder añadir un videojuego, solamente necesitas poner lo necesario y poner un link al videojuego en `README.md` dentro de la carpeta de videojuegos.
