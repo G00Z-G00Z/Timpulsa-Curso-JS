@@ -8,7 +8,7 @@ Para poder añadir un videojuego, solamente necesitas poner lo necesario y poner
 | ------------------------------------------------- | ---------- | ---------- |
 | [Cookie clicker][cookie]                          | 🔥         | 👾         |
 | [Choose your own adventure][choose]               | 🔥🔥       | 👾👾       |
-| [Copia de Flappy Bird (kaboomjs)][tutorialkaboom] | 🔥🔥       | 👾👾👾👾   |
+| [Copia de Flappy Bird (tutorial dekaboomjs)][tutorialkaboom] | 🔥🔥       | 👾👾👾👾   |
 | [Flappy Bird (kaboomjs)][flappybird]              | 🔥🔥🔥     | 👾👾👾👾👾 |
 | [Doodle Jump][doodle]                             | 🔥🔥🔥🔥   | 👾👾👾👾👾 |
 | [Snake game][snake_game]                          | 🔥🔥🔥🔥🔥 | 👾👾👾👾👾 |
@@ -20,4 +20,4 @@ Para poder añadir un videojuego, solamente necesitas poner lo necesario y poner
 [cookie]: ./Cookie/README.md
 [doodle]: ./Doodle/README.md
 [tutorialkaboom]: https://kaboomjs.com/doc/intro
-[flappybird]: https://www.youtube.com/watch?v=hgReGsh5xVU
+[flappybird]: https://docs.replit.com/tutorials/35-build-flappy-bird-with-kaboom
