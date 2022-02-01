@@ -6,6 +6,7 @@ Para enseñar el desarrollo de videojuegos en Js, usaremos la librería de **kab
 
 - Para más información, [documentación de Kaboom js][kaboom.com]
 - Para ver el temario del curso [Temario del curso](Temario.md)
+- Para vel el [e-book de kaboomjs][ebook] con ejemplos de videojuegos
 
 > Se recomienda ampliamente hacer el [tutorial en kaboomjs.com][tutorial_kaboom] en vez de leer el temario. Ya que este entra en detalle y tiene un ejemplo mucho más completo. Sin embargo, se hizo [un resumen](Tutorial.md) en este repositorio como apoyo.
 
@@ -59,3 +60,4 @@ En el `index.html`
 [pagina_principal]: ../README.md
 [kaboom.com]: https://kaboomjs.com/
 [tutorial_kaboom]: https://kaboomjs.com/doc/intro
+[ebook]: https://makejsgames.com/

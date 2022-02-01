@@ -8,6 +8,7 @@ _Repositorio con las clases y los ejercicios del curso de JS_
 - [Temario de Kaboomjs][link_temario_kaboom]
 - [Videojuegos][link_videojuegos]
 - [Planeación de clases][link_planeacion_clases]
+- 🆕[E-book con ejemplos de videojuegos][ebook] (Este libro lo acaba de sacar `kaboomjs` y vienen ejemplos de como hacer varios juegos en kaboom)  
 
 # 👩‍🏫Propósito👨‍🏫
 
@@ -21,3 +22,4 @@ Para colaborar, hacer un fork de la rama principal, y hacer pull request para su
 [link_temario_kaboom]: ./kaboomjs/README.md
 [link_videojuegos]: ./kaboomjs/videojuegos/README.md
 [link_planeacion_clases]: ./Clases/README.md
+[ebook]: https://makejsgames.com/
