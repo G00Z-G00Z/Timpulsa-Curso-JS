@@ -10,7 +10,7 @@ A grandes rasgos un lenguaje de programación es una serie de símbolos, reglas 
  - Java
  - Python
  - C#
-## ¿Como funciona un navegador?
+## ¿Cómo funciona un navegador?
 
  Cuando cargas una página web en tu navegador, estás ejecutando tu código (HTML, CSS y JavaScript) dentro de un entorno de ejecución (la pestaña del navegador). Esto es como una fábrica que toma materias primas (el código) y genera un producto (la página web).
 
