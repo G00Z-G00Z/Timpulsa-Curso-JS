@@ -10,23 +10,23 @@
 
 ---
 
-Algunas de las razones por la cual `javascript` es muy popular:
+Algunas de las razones por las cuales `javascript` es muy popular:
 
-- Es el **único** lenguaje de programación nativo en el browser. En otras palabras, toda las páginas de internet, que son interactivas, usan javascript
-- Es uno de los lenguajes de programación más populares y demandados en el mundo.
+- Es el **único** lenguaje de programación nativo en el browser. En otras palabras, todas las páginas de internet que son interactivas usan javascript
+- Es uno de los lenguajes de programación más populares y demandados en el mundo
 - Es relativamente sencillo de aprender
-- Está en constante desarrollo y tiene una de las comunidades de programación más activas del mundo.
+- Está en constante desarrollo y tiene una de las comunidades de programación más activas del mundo
 - Es muy cool y divertido de aprender 😎
 
 # ¿Qué puedes hacer con javascript?
 
 `Javascript`, al igual que muchos otros lenguajes de programación, es una herramienta. Una herramienta muy poderosa que tiene muchísima popularidad, y está en constante desarrollo. Gracias a este apoyo, en teoría, puedes usar javascript para _todo_.
 
-Sin embargo, como se mencionó antes, es una _herramienta_. Aunque _pueda_ hacer todo, no está diseñada para hacer _todo_. Una analogía podría ser unas tijeras de oficina. Técnicamente, puedes usar las tijeras de oficina para cortar lo que sea. Sin embargo, las tijeras de oficina cortan muy bien el papel (ya que fueron construidas para eso). Pero que puedan cortar, no significa que vas a usar tijeras de oficina para hacer una cirugía (usarías un bisturí). Igualmente, no usarías un bisturí para cortar papel (aunque lo puede hacer).
+Sin embargo, como se mencionó antes, es una _herramienta_. Aunque _pueda_ hacer todo, no está diseñada para hacer _todo_. Una analogía podría ser unas tijeras de oficina. Técnicamente, puedes usar las tijeras de oficina para cortar lo que sea. Sin embargo, las tijeras de oficina cortan muy bien el papel (ya que fueron construidas para eso). Pero que puedan cortar no significa que vas a usar tijeras de oficina para hacer una cirugía (usarías un bisturí). Igualmente, no usarías un bisturí para cortar papel (aunque lo puedes hacer).
 
-Es lo mismo con `javascript`. Aunque gracias al apoyo de la comunidad, a llegado a ser un lenguaje de programación de multiusos, está diseñado principalmente para la _web_ (específicamente el frontend).
+Es lo mismo con `javascript`. Aunque, gracias al apoyo de la comunidad, ha llegado a ser un lenguaje de programación de multiusos, está diseñado principalmente para la _web_ (específicamente el frontend).
 
-En la _web_, actualmente dominan 3 programas. **HTML**, **CSS** y `javascript`. **HTML**, da la estructura a las páginas web, **css** las hace ver bonitas, `javascript` ayuda a darle _interactividad_.
+En la _web_, actualmente dominan 3 programas. **HTML**, **CSS** y `javascript`. **HTML** da la estructura a las páginas web, **css** las hace ver bonitas, `javascript` ayuda a darle _interactividad_.
 
 Por ejemplo:
 
@@ -36,7 +36,7 @@ Por ejemplo:
 - Mostrar y esconder menús
 - etc
 
-Virtualmente **todas** las páginas de internet, son interactivas, entonces si quieres desarrollar cualquier cosa web, **tienes** que aprender `javascript`
+Virtualmente **todas** las páginas de internet son interactivas, entonces si quieres desarrollar cualquier cosa web, **tienes** que aprender `javascript`
 
 También, javascript puede ayudar a construir:
 
@@ -48,7 +48,7 @@ Entonces, `javascript` es un muy buen lenguaje para empezar a programar.
 
 # ¿Qué haremos en este curso?
 
-En este curso, nos centraremos en aprender `javascript`. Sin embargo, no será solamente aprender _sintax_ o programas sencillos, si no que le daremos un enfoque un poco diferente.
+En este curso, nos centraremos en aprender `javascript`. Sin embargo, no será solamente aprender _sintax_ o programas sencillos, sino que le daremos un enfoque un poco diferente.
 
 **En este curso, usaremos javascript para aprender a desarrollar videojuegos!!**
 
