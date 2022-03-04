@@ -2,7 +2,7 @@
 
 # Comentarios
 
-Los comentarios sirve para poder dejar información adicional en el código. Solamente es _texto_, no se interpreta y no afecta al rendimiento del programa. Es solamente para dejar una guía al programador.
+Los comentarios sirven para poder dejar información adicional en el código. Solamente es _texto_, no se interpreta y no afecta al rendimiento del programa. Es solamente para dejar una guía al programador.
 
 Por ejemplo:
 
@@ -22,11 +22,11 @@ console.log(a);
 
 ```javascript
 /*
-    Codigo para encontrar el area de un rectangulo
+    Código para encontrar el área de un rectángulo
 */
 let b = 10; // Donde b es la base
 let h = 20; // Donde h es la altura
-let a = b * h; // Donde a es el area
+let a = b * h; // Donde a es el área
 
 console.log(a);
 ```
@@ -36,7 +36,7 @@ console.log(a);
 **Comentario de una linea**
 
 ```javascript
-// Hola soy un comentario
+// Hola, soy un comentario
 ```
 
 **Comentario de varias lineas**
@@ -46,7 +46,7 @@ console.log(a);
 
 /*
 __________________
-< Hola soy un comentario >
+< Hola, soy un comentario >
  ------------------------
         \   ^__^
          \  (oo)\_______
