@@ -2,7 +2,7 @@
 
 # Primitivos_&_Variables
 
-## Que es una variable
+## Qué es una variable
 
 > Una variable es un contenedor para un valor, como un número que podríamos usar en una suma, o una cadena que podríamos usar como parte de una oración.
 > Los valores de una variable pueden cambiar.
@@ -21,7 +21,7 @@ let miEdad;
 ```
 > Actualmente no tienen ningún valor, son contenedores vacíos.
 
-> Tambén se pueden declarar variables constantes, con la particularidad de que estas no se pueden cambiar por medio de la reasignación
+> También se pueden declarar variables constantes, con la particularidad de que estas no se pueden cambiar por medio de la reasignación.
 
 ```javascript
 const edad = 15;
@@ -49,7 +49,7 @@ let money = 11.18;
 ```
 
 ### String
-> En cualquier lenguaje de programación, un string es una secuencia de caracteres usado para representar el texto.
+> En cualquier lenguaje de programación, un string es una secuencia de caracteres usada para representar el texto.
 
 ```javascript
 let nombre = "nombre";
@@ -58,17 +58,17 @@ let pais = "México"
 ```
 
 ### Boolean
-> En ciencias de informática, un boolean es un dato lógico que solo puede tener los valores true o false.
+> En ciencias de informática, un boolean es un dato lógico que sólo puede tener los valores true o false.
 
 ```javascript
 let T = true;
 let F = false;
 ```
 
-> Existen otras cosas que puedes guardar en variables, pero eso lo descubriras más adelante.
+> Existen otras cosas que puedes guardar en variables, pero eso lo descubrirás más adelante.
 
 ## Ejercicios y solución
-> Declara una variable 'nombre' y despues iniciala con tu nombre.
+> Declara una variable 'nombre' y después iníciala con tu nombre.
 
 *Solución*
 
@@ -77,7 +77,7 @@ let nombre;
 nombre = "Nombre del alumno" //Debe estar entre comillas
 ```
 --- 
-> Crea una variable, asignale un valor numérico, despues asignale un valor booleano, despues un string.
+> Crea una variable, asígnale un valor numérico, después asígnale un valor booleano, y al final asígnale un string.
 
 *Solución*
 
